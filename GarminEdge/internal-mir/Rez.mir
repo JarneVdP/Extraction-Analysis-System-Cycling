@@ -1,0 +1,59 @@
+[ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 2; ]
+using Toybox.WatchUi;
+[ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 3; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 4; ]
+using Toybox.Graphics;
+[ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 5; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 7; ]
+module Rez {
+    [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 8; ]
+    module Drawables {
+        [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 9; @position = 27; initialized = true; ]
+        var LauncherIcon as Symbol;
+    }
+    [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 12; ]
+    module Fonts {
+        [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 12; ]
+        <init> {
+        }
+    }
+    [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 15; ]
+    module JsonData {
+        [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 15; ]
+        <init> {
+        }
+    }
+    [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 18; ]
+    module Layouts {
+        [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 18; ]
+        <init> {
+        }
+    }
+    [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 21; ]
+    module Menus {
+        [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 21; ]
+        <init> {
+        }
+    }
+    [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 24; ]
+    module Strings {
+        [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 24; ]
+        <init> {
+        }
+        [ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 25; @position = 27; initialized = true; ]
+        var AppName as Symbol;
+    }
+}
+[ @file = "c:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\gen\006-B3121-00\source\Rez.mcgen"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,73 @@
+[ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 1; ]
+import Toybox.Application;
+[ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 3; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 4; ]
+using Toybox.BluetoothLowEnergy as :Ble;
+[ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 5; ]
+using Toybox.Timer;
+[ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 7; ]
+class GarminRTDApp extends Application.AppBase{
+    [ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 9; @position = 9; ]
+    var _bcs_profile;
+    [ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 10; ]
+    function initialize() as Void {
+C_Users_jarne_Thesis_Extraction_Analysis_System_Cycling_GarminEdge_source_GarminRTDApp_mc_10_26_start:
+[ "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc" 11 8 ]
+        %tmp.2 = getv ? :AppBase;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C_Users_jarne_Thesis_Extraction_Analysis_System_Cycling_GarminEdge_source_GarminRTDApp_mc_10_26_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 15; ]
+    function onStart(state as Dictionary or Null) as Void {
+C_Users_jarne_Thesis_Extraction_Analysis_System_Cycling_GarminEdge_source_GarminRTDApp_mc_15_51_start:
+[ "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc" 16 8 ]
+        %tmp.4 = getv ? :BLE_Connect_Send;
+        %tmp.1 = newc %tmp.4 ();
+        putv self :_bcs_profile %tmp.1;
+C_Users_jarne_Thesis_Extraction_Analysis_System_Cycling_GarminEdge_source_GarminRTDApp_mc_15_51_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 20; ]
+    function onStop(state as Dictionary or Null) as Void {
+    }
+    [ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 24; ]
+    function getInitialView() as Array<Views or InputDelegates> or Null {
+C_Users_jarne_Thesis_Extraction_Analysis_System_Cycling_GarminEdge_source_GarminRTDApp_mc_24_65_start:
+[ "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc" 25 8 ]
+        %tmp.1 = newa Array<Views or InputDelegates> 1;
+        %tmp.5 = getv ? :GarminRTDView;
+        %tmp.7 = getv ? :_bcs_profile;
+        %tmp.2 = newc %tmp.5 (%tmp.7);
+        %tmp.8 = dup %tmp.1;
+        %tmp.9 = aputv %tmp.8 0 %tmp.2;
+        ret %tmp.9;
+C_Users_jarne_Thesis_Extraction_Analysis_System_Cycling_GarminEdge_source_GarminRTDApp_mc_24_65_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 28; ]
+    function onSettingsChanged() as Void {
+    }
+}
+[ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 34; ]
+function getApp() as GarminRTDApp {
+C_Users_jarne_Thesis_Extraction_Analysis_System_Cycling_GarminEdge_source_GarminRTDApp_mc_34_34_start:
+[ "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc" 35 4 ]
+    %tmp.1 = getm $.Toybox.Application;
+    %tmp.2 = getv function %tmp.1 :getApp;
+    %tmp.3 = invoke %tmp.1 %tmp.2();
+    %tmp.4 = as %tmp.3 GarminRTDApp;
+    ret %tmp.4;
+C_Users_jarne_Thesis_Extraction_Analysis_System_Cycling_GarminEdge_source_GarminRTDApp_mc_34_34_stop:
+}
+[ @file = "C:\Users\jarne\Thesis\Extraction-Analysis-System-Cycling\GarminEdge\source\GarminRTDApp.mc"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,782 @@
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 1; ]
+using Toybox.System;
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 2; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 3; ]
+using Toybox.BluetoothLowEnergy as :Ble;
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 4; ]
+using Toybox.Lang;
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 5; ]
+using Toybox.Timer;
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 7; ]
+class BLE_Connect_Send{
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 7; ]
+    <init> {
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 12 8 ]
+        %tmp.1 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.2 = getv function %tmp.1 :stringToUuid;
+        %tmp.3 = "5fafc201-2510-459e-8fcc-c5c9c331914b";
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        putv self :UUID_ESP_S %tmp.4;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 13 8 ]
+        %tmp.5 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.6 = getv function %tmp.5 :stringToUuid;
+        %tmp.7 = "5eb5483e-2510-4688-b7f5-ea07361b26a8";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        putv self :UUID_ESP_C %tmp.8;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 22 6 ]
+        %tmp.9 = newa 0;
+        putv self :messagestack %tmp.9;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 25 6 ]
+        %tmp.10 = newd 2;
+        %tmp.12 = const :uuid;
+        %tmp.14 = getv ? :UUID_ESP_S;
+        %tmp.15 = dup %tmp.10;
+        %tmp.16 = aputv %tmp.15 %tmp.12 %tmp.14;
+        %tmp.18 = const :characteristics;
+        %tmp.19 = newa 1;
+        %tmp.20 = newd 2;
+        %tmp.22 = const :uuid;
+        %tmp.24 = getv ? :UUID_ESP_C;
+        %tmp.25 = dup %tmp.20;
+        %tmp.26 = aputv %tmp.25 %tmp.22 %tmp.24;
+        %tmp.28 = const :descriptors;
+        %tmp.29 = newa 1;
+        %tmp.30 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.31 = getv function %tmp.30 :cccdUuid;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        %tmp.33 = dup %tmp.29;
+        %tmp.34 = aputv %tmp.33 0 %tmp.32;
+        %tmp.35 = dup %tmp.26;
+        %tmp.36 = aputv %tmp.35 %tmp.28 %tmp.34;
+        %tmp.37 = dup %tmp.19;
+        %tmp.38 = aputv %tmp.37 0 %tmp.36;
+        %tmp.39 = dup %tmp.16;
+        %tmp.40 = aputv %tmp.39 %tmp.18 %tmp.38;
+        putv self :BLE_CS_Profile %tmp.40;
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 8; @position = 6; ]
+    var _bledelegate;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 9; @position = 6; ]
+    var _blePaired = false;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 10; @position = 6; ]
+    var _device;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 12; @position = 8; ]
+    const UUID_ESP_S;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 13; @position = 8; ]
+    const UUID_ESP_C;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 15; @position = 8; ]
+    const NAME_ESP_S = "ESP-S";
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 16; @position = 8; ]
+    const NAME_ESP_N = "ESP-N";
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 19; @position = 6; ]
+    var connectedtimer = -1;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 22; @position = 6; ]
+    var messagestack;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 23; @position = 6; ]
+    var writeBusy = false;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 25; @position = 6; ]
+    var BLE_CS_Profile;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 36; ]
+    function initialize() as Void {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_36_24_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 37 4 ]
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "BLE_CS.initialize";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 39 4 ]
+        %tmp.7 = getv ? :BLE_CS_Delegate;
+        %tmp.9 = lgetv %self;
+        %tmp.4 = newc %tmp.7 (%tmp.9);
+        putv self :_bledelegate %tmp.4;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 40 4 ]
+        %tmp.10 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.11 = getv function %tmp.10 :setDelegate;
+        %tmp.13 = getv ? :_bledelegate;
+        invoke %tmp.10 %tmp.11(%tmp.13);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 41 4 ]
+        %tmp.14 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.15 = getv function %tmp.14 :registerProfile;
+        %tmp.17 = getv ? :BLE_CS_Profile;
+        invoke %tmp.14 %tmp.15(%tmp.17);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_36_24_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 44; ]
+    function isPaired() {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_44_22_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 45 4 ]
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "BLE_CS.isPaired ";
+        %tmp.5 = getv ? :_blePaired;
+        %tmp.6 = add %tmp.3 %tmp.5;
+        invoke %tmp.1 %tmp.2(%tmp.6);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 46 4 ]
+        %tmp.8 = getv ? :_blePaired;
+        ret %tmp.8;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_44_22_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 49; ]
+    function pair() {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_49_18_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 50 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_50_4_if_stmt:
+        %tmp.2 = getv ? :_blePaired;
+        %tmp.3 = not %tmp.2;
+        bf %tmp.3 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_50_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_50_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_50_21_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 51 6 ]
+        %tmp.4 = getm $.Toybox.System;
+        %tmp.5 = getv function %tmp.4 :println;
+        %tmp.6 = "BLE_CS.pairing";
+        invoke %tmp.4 %tmp.5(%tmp.6);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 53 6 ]
+        %tmp.7 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.8 = getv function %tmp.7 :setScanState;
+        %tmp.9 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.10 = getv %tmp.9 :SCAN_STATE_SCANNING;
+        invoke %tmp.7 %tmp.8(%tmp.10);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_50_21_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_50_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_50_4_if_end:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_49_18_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 57; ]
+    function unpair() {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_57_20_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 58 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_58_4_if_stmt:
+        %tmp.2 = getv ? :_device;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_58_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_58_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_58_25_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 59 6 ]
+        %tmp.5 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.6 = getv function %tmp.5 :unpairDevice;
+        %tmp.8 = getv ? :_device;
+        %tmp.9 = as %tmp.8 { (!Null) };
+        invoke %tmp.5 %tmp.6(%tmp.9);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 60 6 ]
+        %tmp.10 = false;
+        putv self :_blePaired %tmp.10;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 61 6 ]
+        %tmp.11 = null;
+        putv self :_device %tmp.11;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_58_25_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_58_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_58_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 63 4 ]
+        %tmp.12 = getm $.Toybox.WatchUi;
+        %tmp.13 = getv function %tmp.12 :requestUpdate;
+        invoke %tmp.12 %tmp.13();
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_57_20_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 67; ]
+    function addmessage(msg) {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_67_27_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 68 4 ]
+        %tmp.2 = getv ? :messagestack;
+        %tmp.3 = getv function %tmp.2 :add;
+        %tmp.5 = lgetv %msg;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 69 4 ]
+        %tmp.6 = getm $.Toybox.System;
+        %tmp.7 = getv function %tmp.6 :println;
+        %tmp.8 = "Stack: ";
+        %tmp.10 = getv ? :messagestack;
+        %tmp.11 = add %tmp.8 %tmp.10;
+        invoke %tmp.6 %tmp.7(%tmp.11);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_67_27_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 72; ]
+    function clearfromstack() {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_72_28_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 73 4 ]
+        %tmp.2 = getv ? :messagestack;
+        %tmp.3 = getv function %tmp.2 :slice;
+        %tmp.4 = 1;
+        %tmp.6 = getv ? :messagestack;
+        %tmp.7 = getv function %tmp.6 :size;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        %tmp.9 = invoke %tmp.2 %tmp.3(%tmp.4, %tmp.8);
+        putv self :messagestack %tmp.9;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_72_28_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 77; ]
+    function sendstack() as Void {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_77_31_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 78 4 ]
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "size ";
+        %tmp.5 = getv ? :messagestack;
+        %tmp.6 = getv function %tmp.5 :size;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = add %tmp.3 %tmp.7;
+        %tmp.9 = " writeBusy ";
+        %tmp.10 = add %tmp.8 %tmp.9;
+        %tmp.12 = getv ? :writeBusy;
+        %tmp.13 = add %tmp.10 %tmp.12;
+        %tmp.14 = " _device ";
+        %tmp.15 = add %tmp.13 %tmp.14;
+        %tmp.17 = getv ? :_device;
+        %tmp.18 = add %tmp.15 %tmp.17;
+        invoke %tmp.1 %tmp.2(%tmp.18);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 79 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_4_if_stmt:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_8_begin:
+        %tmp.20 = getv ? :messagestack;
+        %tmp.21 = getv function %tmp.20 :size;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        %tmp.23 = 0;
+        %tmp.24 = gt %tmp.22 %tmp.23;
+        %tmp.25 = dup %tmp.24;
+        bf %tmp.25 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_35_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_35_true:
+        %tmp.27 = getv ? :writeBusy;
+        %tmp.28 = not %tmp.27;
+        %tmp.29 = and %tmp.24 %tmp.28;
+        push %tmp.29;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_35_end:
+        %tmp.30 = phi [%tmp.25 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_8_begin] [%tmp.29 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_35_true] [%tmp.30 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_35_end];
+        %tmp.31 = dup %tmp.30;
+        bf %tmp.31 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_49_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_49_true:
+        %tmp.33 = getv ? :_device;
+        %tmp.34 = null;
+        %tmp.35 = ne %tmp.33 %tmp.34;
+        %tmp.36 = and %tmp.30 %tmp.35;
+        push %tmp.36;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_49_end:
+        %tmp.37 = phi [%tmp.31 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_8_begin] [%tmp.36 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_49_true] [%tmp.37 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_49_end];
+        bf %tmp.37 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_66_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 80 6 ]
+        try @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_beginTry @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_endTry @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_catch @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_finally;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_beginTry:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_10_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 81 8 ]
+        %tmp.38 = true;
+        putv self :writeBusy %tmp.38;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 82 8 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_10_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_10_stop" ]
+        %ble_charact.1 = local;
+        %tmp.40 = getv ? :_device;
+        %tmp.41 = as %tmp.40 { (!Null) };
+        %tmp.42 = getv function %tmp.41 :getService;
+        %tmp.44 = getv ? :UUID_ESP_S;
+        %tmp.45 = invoke %tmp.41 %tmp.42(%tmp.44);
+        %tmp.46 = getv function %tmp.45 :getCharacteristic;
+        %tmp.48 = getv ? :UUID_ESP_C;
+        %tmp.49 = invoke %tmp.45 %tmp.46(%tmp.48);
+        lputv %ble_charact.1 %tmp.49;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 83 8 ]
+        %tmp.50 = getm $.Toybox.System;
+        %tmp.51 = getv function %tmp.50 :println;
+        %tmp.52 = "BLE_CS: Writing ";
+        %tmp.54 = getv ? :messagestack;
+        %tmp.55 = 0;
+        %tmp.56 = agetv %tmp.54 %tmp.55;
+        %tmp.57 = add %tmp.52 %tmp.56;
+        invoke %tmp.50 %tmp.51(%tmp.57);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 85 8 ]
+        %tmp.58 = lgetv %ble_charact.1;
+        %tmp.59 = getv function %tmp.58 :requestWrite;
+        %tmp.61 = getv ? :messagestack;
+        %tmp.62 = 0;
+        %tmp.63 = agetv %tmp.61 %tmp.62;
+        %tmp.64 = newd 1;
+        %tmp.66 = const :writeType;
+        %tmp.67 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.68 = getv %tmp.67 :WRITE_TYPE_DEFAULT;
+        %tmp.69 = dup %tmp.64;
+        %tmp.70 = aputv %tmp.69 %tmp.66 %tmp.68;
+        invoke %tmp.58 %tmp.59(%tmp.63, %tmp.70);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_10_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_endTry:
+        jsr @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_finally;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_catch:
+        %tmp.71 = exception;
+        push %tmp.71;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 86 8 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_catch" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_86_8_end" ]
+        %ex.2 = local;
+        %tmp.72 = dup %tmp.71;
+        lputv %ex.2 %tmp.72;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_86_19_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 87 8 ]
+        %tmp.73 = getm $.Toybox.System;
+        %tmp.74 = getv function %tmp.73 :println;
+        %tmp.75 = "Stack communication error: ";
+        %tmp.76 = lgetv %ex.2;
+        %tmp.77 = getv function %tmp.76 :getErrorMessage;
+        %tmp.78 = invoke %tmp.76 %tmp.77();
+        %tmp.79 = add %tmp.75 %tmp.78;
+        invoke %tmp.73 %tmp.74(%tmp.79);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 88 8 ]
+        %tmp.80 = lgetv %ex.2;
+        %tmp.81 = getv function %tmp.80 :printStackTrace;
+        invoke %tmp.80 %tmp.81();
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_86_19_stop:
+        jsr @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_finally;
+        pop;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_86_8_end:
+        jsr @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_finally;
+        throw %tmp.71;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_finally:
+        jsrret;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_80_6_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 90 6 ]
+        %tmp.82 = getm $.Toybox.System;
+        %tmp.83 = getv function %tmp.82 :println;
+        %tmp.84 = "Cleaning stack";
+        invoke %tmp.82 %tmp.83(%tmp.84);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 91 6 ]
+        %tmp.85 = self;
+        %tmp.86 = getv function %tmp.85 :clearfromstack;
+        invoke %tmp.85 %tmp.86();
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 92 6 ]
+        %tmp.87 = false;
+        putv self :writeBusy %tmp.87;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_66_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_79_4_if_end:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_77_31_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 96; ]
+    function toArray(string, splitter) {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_96_37_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 97 4 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_96_37_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_96_37_stop" ]
+        %array.1 = local;
+        %tmp.2 = 4;
+        %tmp.1 = newa %tmp.2;
+        lputv %array.1 %tmp.1;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 98 4 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_96_37_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_96_37_stop" ]
+        %index.2 = local;
+        %tmp.3 = 0;
+        lputv %index.2 %tmp.3;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 99 4 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_96_37_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_96_37_stop" ]
+        %location.3 = local;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 100 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_100_4_do_while_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_100_7_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 101 6 ]
+        %tmp.4 = lgetv %string;
+        %tmp.5 = getv function %tmp.4 :find;
+        %tmp.7 = lgetv %splitter;
+        %tmp.8 = invoke %tmp.4 %tmp.5(%tmp.7);
+        lputv %location.3 %tmp.8;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 102 6 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_102_6_if_stmt:
+        %tmp.10 = lgetv %location.3;
+        %tmp.11 = null;
+        %tmp.12 = ne %tmp.10 %tmp.11;
+        bf %tmp.12 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_102_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_102_6_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_102_28_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 103 8 ]
+        %tmp.13 = lgetv %array.1;
+        %tmp.14 = lgetv %string;
+        %tmp.15 = getv function %tmp.14 :substring;
+        %tmp.16 = 0;
+        %tmp.18 = lgetv %location.3;
+        %tmp.19 = as %tmp.18 { (!Null) };
+        %tmp.20 = invoke %tmp.14 %tmp.15(%tmp.16, %tmp.19);
+        %tmp.22 = lgetv %index.2;
+        aputv %tmp.13 %tmp.22 %tmp.20;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 104 8 ]
+        %tmp.23 = lgetv %string;
+        %tmp.24 = getv function %tmp.23 :substring;
+        %tmp.26 = lgetv %location.3;
+        %tmp.27 = as %tmp.26 { (!Null) };
+        %tmp.28 = 1;
+        %tmp.29 = add %tmp.27 %tmp.28;
+        %tmp.30 = lgetv %string;
+        %tmp.31 = getv function %tmp.30 :length;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        %tmp.33 = invoke %tmp.23 %tmp.24(%tmp.29, %tmp.32);
+        lputv %string %tmp.33;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 105 8 ]
+        %tmp.36 = lgetv %index.2;
+        %tmp.37 = add %tmp.36 1;
+        lputv %index.2 %tmp.37;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_102_28_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_102_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_102_6_if_end:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_100_7_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_100_4_do_while_test:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 107 ]
+        %tmp.39 = lgetv %location.3;
+        %tmp.40 = null;
+        %tmp.41 = ne %tmp.39 %tmp.40;
+        bt %tmp.41 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_100_4_do_while_begin;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_100_4_do_while_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 108 4 ]
+        %tmp.42 = lgetv %array.1;
+        %tmp.44 = lgetv %string;
+        %tmp.46 = lgetv %index.2;
+        aputv %tmp.42 %tmp.46 %tmp.44;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 110 4 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_96_37_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_96_37_stop" ]
+        %result.4 = local;
+        %tmp.49 = lgetv %index.2;
+        %tmp.47 = newa %tmp.49;
+        lputv %result.4 %tmp.47;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 111 4 ]
+        for @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_test @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_incr @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_init:
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_begin" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_end" ]
+        %i.5 = local;
+        %tmp.50 = 0;
+        lputv %i.5 %tmp.50;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_test:
+        %tmp.52 = lgetv %i.5;
+        %tmp.54 = lgetv %index.2;
+        %tmp.55 = lt %tmp.52 %tmp.54;
+        bf %tmp.55 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_36_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 112 6 ]
+        %tmp.57 = lgetv %array.1;
+        lputv %result.4 %tmp.57;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_36_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_incr:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 111 ]
+        %tmp.60 = lgetv %i.5;
+        %tmp.61 = add %tmp.60 1;
+        lputv %i.5 %tmp.61;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_test;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_111_4_for_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 114 4 ]
+        %tmp.63 = lgetv %result.4;
+        ret %tmp.63;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_96_37_stop:
+    }
+}
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 118; ]
+class BLE_CS_Delegate extends Ble.BleDelegate{
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 118; ]
+    <init> {
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 118; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 119; @position = 14; ]
+    private
+    var _bcs_profile;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 121; ]
+    public
+    function initialize(bcs) as Void {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_121_34_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 122 4 ]
+        %tmp.2 = getv ? :BleDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 123 4 ]
+        %tmp.5 = lgetv %bcs;
+        putv self :_bcs_profile %tmp.5;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_121_34_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 126; ]
+    function onConnectedStateChanged(device, state) {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_126_50_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 127 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_127_4_if_stmt:
+        %tmp.2 = lgetv %state;
+        %tmp.3 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.4 = getv %tmp.3 :CONNECTION_STATE_CONNECTED;
+        %tmp.5 = eq %tmp.2 %tmp.4;
+        bf %tmp.5 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_127_4_if_false;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_127_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_127_49_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 128 6 ]
+        %tmp.6 = getm $.Toybox.System;
+        %tmp.7 = getv function %tmp.6 :println;
+        %tmp.8 = "BLE_CS: Connected to ";
+        %tmp.9 = lgetv %device;
+        %tmp.10 = getv function %tmp.9 :getName;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        %tmp.12 = add %tmp.8 %tmp.11;
+        invoke %tmp.6 %tmp.7(%tmp.12);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 129 6 ]
+        %tmp.13 = getv self :_bcs_profile;
+        %tmp.14 = true;
+        putv %tmp.13 :_blePaired %tmp.14;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 130 6 ]
+        %tmp.15 = getv self :_bcs_profile;
+        %tmp.17 = lgetv %device;
+        putv %tmp.15 :_device %tmp.17;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 132 6 ]
+        %tmp.18 = getv self :_bcs_profile;
+        %tmp.19 = 5;
+        putv %tmp.18 :connectedtimer %tmp.19;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_127_49_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_127_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_127_4_if_false:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_133_11_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 134 6 ]
+        %tmp.20 = getm $.Toybox.System;
+        %tmp.21 = getv function %tmp.20 :println;
+        %tmp.22 = "BLE_CS: Disconnected from ";
+        %tmp.23 = lgetv %device;
+        %tmp.24 = getv function %tmp.23 :getName;
+        %tmp.25 = invoke %tmp.23 %tmp.24();
+        %tmp.26 = add %tmp.22 %tmp.25;
+        invoke %tmp.20 %tmp.21(%tmp.26);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 135 6 ]
+        %tmp.27 = getv self :_bcs_profile;
+        %tmp.28 = false;
+        putv %tmp.27 :_blePaired %tmp.28;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 136 6 ]
+        %tmp.29 = getv self :_bcs_profile;
+        %tmp.30 = null;
+        putv %tmp.29 :_device %tmp.30;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 137 6 ]
+        %tmp.31 = getv self :_bcs_profile;
+        %tmp.32 = 1;
+        %tmp.33 = sub 0 %tmp.32;
+        putv %tmp.31 :connectedtimer %tmp.33;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_133_11_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_127_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 139 4 ]
+        %tmp.34 = getm $.Toybox.WatchUi;
+        %tmp.35 = getv function %tmp.34 :requestUpdate;
+        invoke %tmp.34 %tmp.35();
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_126_50_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 142; ]
+    function onScanResults(scanResults) {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_142_38_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 143 4 ]
+        for @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_test @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_incr @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_init:
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_begin" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_end" ]
+        %result.1 = local;
+        %tmp.1 = lgetv %scanResults;
+        %tmp.2 = getv function %tmp.1 :next;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %result.1 %tmp.3;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_test:
+        %tmp.5 = lgetv %result.1;
+        %tmp.6 = null;
+        %tmp.7 = ne %tmp.5 %tmp.6;
+        bf %tmp.7 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_147_6_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 148 6 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_148_6_if_stmt:
+        %tmp.9 = lgetv %result.1;
+        %tmp.10 = as %tmp.9 { (!Null) };
+        %tmp.11 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.12 = getv %tmp.11 :ScanResult;
+        %tmp.13 = isa %tmp.10 %tmp.12;
+        bf %tmp.13 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_148_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_148_6_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_148_44_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 149 8 ]
+        %tmp.14 = getm $.Toybox.System;
+        %tmp.15 = getv function %tmp.14 :println;
+        %tmp.16 = "Scan BLE_CS: ";
+        %tmp.17 = lgetv %result.1;
+        %tmp.18 = as %tmp.17 { (Ble.ScanResult) && (!Null) };
+        %tmp.19 = getv function %tmp.18 :getDeviceName;
+        %tmp.20 = invoke %tmp.18 %tmp.19();
+        %tmp.21 = add %tmp.16 %tmp.20;
+        %tmp.22 = " ";
+        %tmp.23 = add %tmp.21 %tmp.22;
+        %tmp.24 = lgetv %result.1;
+        %tmp.25 = as %tmp.24 { (Ble.ScanResult) && (!Null) };
+        %tmp.26 = getv function %tmp.25 :getServiceUuids;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        %tmp.28 = add %tmp.23 %tmp.27;
+        invoke %tmp.14 %tmp.15(%tmp.28);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 156 8 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_156_8_if_stmt:
+        %tmp.29 = self;
+        %tmp.30 = getv function %tmp.29 :contains;
+        %tmp.31 = lgetv %result.1;
+        %tmp.32 = as %tmp.31 { (Ble.ScanResult) && (!Null) };
+        %tmp.33 = getv function %tmp.32 :getServiceUuids;
+        %tmp.34 = invoke %tmp.32 %tmp.33();
+        %tmp.36 = getv ? :_bcs_profile;
+        %tmp.37 = getv %tmp.36 :UUID_ESP_S;
+        %tmp.38 = invoke %tmp.29 %tmp.30(%tmp.34, %tmp.37);
+        bf %tmp.38 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_156_8_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_156_8_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_156_73_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 157 10 ]
+        %tmp.39 = getm $.Toybox.System;
+        %tmp.40 = getv function %tmp.39 :println;
+        %tmp.41 = "Found BLE_CS: ";
+        %tmp.42 = lgetv %result.1;
+        %tmp.43 = as %tmp.42 { (Ble.ScanResult) && (!Null) };
+        %tmp.44 = getv function %tmp.43 :getDeviceName;
+        %tmp.45 = invoke %tmp.43 %tmp.44();
+        %tmp.46 = add %tmp.41 %tmp.45;
+        %tmp.47 = " ";
+        %tmp.48 = add %tmp.46 %tmp.47;
+        %tmp.49 = lgetv %result.1;
+        %tmp.50 = as %tmp.49 { (Ble.ScanResult) && (!Null) };
+        %tmp.51 = getv function %tmp.50 :getServiceUuids;
+        %tmp.52 = invoke %tmp.50 %tmp.51();
+        %tmp.53 = add %tmp.48 %tmp.52;
+        invoke %tmp.39 %tmp.40(%tmp.53);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 163 10 ]
+        %tmp.54 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.55 = getv function %tmp.54 :setScanState;
+        %tmp.56 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.57 = getv %tmp.56 :SCAN_STATE_OFF;
+        invoke %tmp.54 %tmp.55(%tmp.57);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 164 10 ]
+        %tmp.58 = getv self :_bcs_profile;
+        %tmp.59 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.60 = getv function %tmp.59 :pairDevice;
+        %tmp.62 = lgetv %result.1;
+        %tmp.63 = as %tmp.62 { (Ble.ScanResult) && (!Null) };
+        %tmp.64 = invoke %tmp.59 %tmp.60(%tmp.63);
+        putv %tmp.58 :_device %tmp.64;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 165 10 ]
+        %tmp.65 = getv self :_bcs_profile;
+        %tmp.66 = true;
+        putv %tmp.65 :_blePaired %tmp.66;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 166 10 ]
+        %tmp.67 = getm $.Toybox.WatchUi;
+        %tmp.68 = getv function %tmp.67 :requestUpdate;
+        invoke %tmp.67 %tmp.68();
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_156_73_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_156_8_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_156_8_if_end:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_148_44_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_148_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_148_6_if_end:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_147_6_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_incr:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 146 ]
+        %tmp.69 = lgetv %scanResults;
+        %tmp.70 = getv function %tmp.69 :next;
+        %tmp.71 = invoke %tmp.69 %tmp.70();
+        lputv %result.1 %tmp.71;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_test;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_143_4_for_end:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_142_38_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 172; ]
+    function onCharacteristicWrite(characteristic, status) {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_172_57_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 173 4 ]
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "BLE_CS: onCharacteristicWrite ";
+        %tmp.5 = lgetv %characteristic;
+        %tmp.6 = add %tmp.3 %tmp.5;
+        %tmp.7 = "comm ready?";
+        %tmp.8 = add %tmp.6 %tmp.7;
+        %tmp.10 = lgetv %status;
+        %tmp.11 = add %tmp.8 %tmp.10;
+        invoke %tmp.1 %tmp.2(%tmp.11);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_172_57_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 178; ]
+    private
+    function contains(iter, obj) {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_178_39_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 179 4 ]
+        for @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_test @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_incr @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_init:
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_begin" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_end" ]
+        %uuid.1 = local;
+        %tmp.1 = lgetv %iter;
+        %tmp.2 = getv function %tmp.1 :next;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %uuid.1 %tmp.3;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_test:
+        %tmp.5 = lgetv %uuid.1;
+        %tmp.6 = null;
+        %tmp.7 = ne %tmp.5 %tmp.6;
+        bf %tmp.7 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_67_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 180 6 ]
+        %tmp.8 = getm $.Toybox.System;
+        %tmp.9 = getv function %tmp.8 :println;
+        %tmp.10 = "Checking ";
+        %tmp.12 = lgetv %uuid.1;
+        %tmp.13 = as %tmp.12 { (!Null) };
+        %tmp.14 = add %tmp.10 %tmp.13;
+        %tmp.15 = " against ";
+        %tmp.16 = add %tmp.14 %tmp.15;
+        %tmp.18 = lgetv %obj;
+        %tmp.19 = add %tmp.16 %tmp.18;
+        %tmp.20 = " ";
+        %tmp.21 = add %tmp.19 %tmp.20;
+        %tmp.22 = lgetv %uuid.1;
+        %tmp.23 = as %tmp.22 { (!Null) };
+        %tmp.24 = getv function %tmp.23 :equals;
+        %tmp.26 = lgetv %obj;
+        %tmp.27 = invoke %tmp.23 %tmp.24(%tmp.26);
+        %tmp.28 = add %tmp.21 %tmp.27;
+        invoke %tmp.8 %tmp.9(%tmp.28);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 181 6 ]
+        %tmp.29 = getm $.Toybox.System;
+        %tmp.30 = getv function %tmp.29 :println;
+        %tmp.31 = "Iter";
+        %tmp.33 = lgetv %iter;
+        %tmp.34 = add %tmp.31 %tmp.33;
+        invoke %tmp.29 %tmp.30(%tmp.34);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 182 6 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_182_6_if_stmt:
+        %tmp.35 = lgetv %uuid.1;
+        %tmp.36 = as %tmp.35 { (!Null) };
+        %tmp.37 = getv function %tmp.36 :equals;
+        %tmp.39 = lgetv %obj;
+        %tmp.40 = invoke %tmp.36 %tmp.37(%tmp.39);
+        bf %tmp.40 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_182_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_182_6_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_182_28_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 183 8 ]
+        %tmp.41 = getm $.Toybox.System;
+        %tmp.42 = getv function %tmp.41 :println;
+        %tmp.43 = "Match ";
+        %tmp.45 = lgetv %obj;
+        %tmp.46 = add %tmp.43 %tmp.45;
+        invoke %tmp.41 %tmp.42(%tmp.46);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 184 8 ]
+        %tmp.47 = true;
+        ret %tmp.47;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_182_28_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_182_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_182_6_if_end:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_67_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_incr:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 179 ]
+        %tmp.48 = lgetv %iter;
+        %tmp.49 = getv function %tmp.48 :next;
+        %tmp.50 = invoke %tmp.48 %tmp.49();
+        lputv %uuid.1 %tmp.50;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_test;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_179_4_for_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc" 187 4 ]
+        %tmp.51 = false;
+        ret %tmp.51;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GARMINRTDBle_mc_178_39_stop:
+    }
+}
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GARMINRTDBle.mc"; @line = 1; ]
+<init> {
+}

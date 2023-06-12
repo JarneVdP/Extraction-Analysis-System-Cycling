@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+<manifest filename="C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\manifest.xml"/>
+<pcToLineNum>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDApp.mc" id="1" lineNum="7" parent="globals/GarminRTDApp" pc="268435460" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDApp.mc" id="2" lineNum="15" parent="globals/GarminRTDApp" pc="268435479" symbol="onStart"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDApp.mc" id="2" lineNum="16" parent="globals/GarminRTDApp" pc="268435481" symbol="onStart"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDApp.mc" id="4" lineNum="24" parent="globals/GarminRTDApp" pc="268435516" symbol="getInitialView"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDApp.mc" id="4" lineNum="25" parent="globals/GarminRTDApp" pc="268435518" symbol="getInitialView"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDApp.mc" id="5" lineNum="10" parent="globals/GarminRTDApp" pc="268435567" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDApp.mc" id="5" lineNum="11" parent="globals/GarminRTDApp" pc="268435569" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDApp.mc" id="6" lineNum="20" parent="globals/GarminRTDApp" pc="268435588" symbol="onStop"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDApp.mc" id="7" lineNum="34" parent="globals" pc="268435591" symbol="getApp"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDApp.mc" id="7" lineNum="35" parent="globals" pc="268435601" symbol="getApp"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="8" lineNum="7" parent="globals/BLE_Connect_Send" pc="268435617" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="8" lineNum="12" parent="globals/BLE_Connect_Send" pc="268435617" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="8" lineNum="13" parent="globals/BLE_Connect_Send" pc="268435645" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="8" lineNum="22" parent="globals/BLE_Connect_Send" pc="268435673" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="8" lineNum="25" parent="globals/BLE_Connect_Send" pc="268435687" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="9" lineNum="67" parent="globals/BLE_Connect_Send" pc="268435799" symbol="addmessage"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="9" lineNum="68" parent="globals/BLE_Connect_Send" pc="268435801" symbol="addmessage"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="9" lineNum="69" parent="globals/BLE_Connect_Send" pc="268435821" symbol="addmessage"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="10" lineNum="49" parent="globals/BLE_Connect_Send" pc="268435852" symbol="pair"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="10" lineNum="50" parent="globals/BLE_Connect_Send" pc="268435854" symbol="pair"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="10" lineNum="51" parent="globals/BLE_Connect_Send" pc="268435866" symbol="pair"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="10" lineNum="53" parent="globals/BLE_Connect_Send" pc="268435887" symbol="pair"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="77" parent="globals/BLE_Connect_Send" pc="268435912" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="78" parent="globals/BLE_Connect_Send" pc="268435916" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="79" parent="globals/BLE_Connect_Send" pc="268435985" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="80" parent="globals/BLE_Connect_Send" pc="268436042" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="81" parent="globals/BLE_Connect_Send" pc="268436042" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="82" parent="globals/BLE_Connect_Send" pc="268436052" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="83" parent="globals/BLE_Connect_Send" pc="268436096" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="85" parent="globals/BLE_Connect_Send" pc="268436132" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="86" parent="globals/BLE_Connect_Send" pc="268436183" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="87" parent="globals/BLE_Connect_Send" pc="268436187" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="88" parent="globals/BLE_Connect_Send" pc="268436220" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="90" parent="globals/BLE_Connect_Send" pc="268436244" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="91" parent="globals/BLE_Connect_Send" pc="268436265" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="11" lineNum="92" parent="globals/BLE_Connect_Send" pc="268436277" symbol="sendstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="12" lineNum="44" parent="globals/BLE_Connect_Send" pc="268436291" symbol="isPaired"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="12" lineNum="45" parent="globals/BLE_Connect_Send" pc="268436293" symbol="isPaired"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="12" lineNum="46" parent="globals/BLE_Connect_Send" pc="268436323" symbol="isPaired"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="13" lineNum="72" parent="globals/BLE_Connect_Send" pc="268436332" symbol="clearfromstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="13" lineNum="73" parent="globals/BLE_Connect_Send" pc="268436334" symbol="clearfromstack"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="96" parent="globals/BLE_Connect_Send" pc="268436382" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="97" parent="globals/BLE_Connect_Send" pc="268436386" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="98" parent="globals/BLE_Connect_Send" pc="268436394" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="100" parent="globals/BLE_Connect_Send" pc="268436401" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="101" parent="globals/BLE_Connect_Send" pc="268436401" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="99" parent="globals/BLE_Connect_Send" pc="268436401" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="102" parent="globals/BLE_Connect_Send" pc="268436416" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="103" parent="globals/BLE_Connect_Send" pc="268436423" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="104" parent="globals/BLE_Connect_Send" pc="268436446" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="105" parent="globals/BLE_Connect_Send" pc="268436478" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="108" parent="globals/BLE_Connect_Send" pc="268436498" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="110" parent="globals/BLE_Connect_Send" pc="268436505" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="111" parent="globals/BLE_Connect_Send" pc="268436510" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="112" parent="globals/BLE_Connect_Send" pc="268436525" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="14" lineNum="114" parent="globals/BLE_Connect_Send" pc="268436542" symbol="toArray"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="15" lineNum="57" parent="globals/BLE_Connect_Send" pc="268436545" symbol="unpair"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="15" lineNum="58" parent="globals/BLE_Connect_Send" pc="268436547" symbol="unpair"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="15" lineNum="59" parent="globals/BLE_Connect_Send" pc="268436560" symbol="unpair"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="15" lineNum="60" parent="globals/BLE_Connect_Send" pc="268436584" symbol="unpair"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="15" lineNum="61" parent="globals/BLE_Connect_Send" pc="268436594" symbol="unpair"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="15" lineNum="63" parent="globals/BLE_Connect_Send" pc="268436606" symbol="unpair"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="16" lineNum="36" parent="globals/BLE_Connect_Send" pc="268436623" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="16" lineNum="37" parent="globals/BLE_Connect_Send" pc="268436625" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="16" lineNum="39" parent="globals/BLE_Connect_Send" pc="268436646" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="16" lineNum="40" parent="globals/BLE_Connect_Send" pc="268436682" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="16" lineNum="41" parent="globals/BLE_Connect_Send" pc="268436706" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="17" lineNum="118" parent="globals/BLE_CS_Delegate" pc="268436731" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="18" lineNum="178" parent="globals/BLE_CS_Delegate" pc="268436750" symbol="&lt;globals/BLE_CS_Delegate/&lt;&gt;contains&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="18" lineNum="179" parent="globals/BLE_CS_Delegate" pc="268436754" symbol="&lt;globals/BLE_CS_Delegate/&lt;&gt;contains&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="18" lineNum="180" parent="globals/BLE_CS_Delegate" pc="268436774" symbol="&lt;globals/BLE_CS_Delegate/&lt;&gt;contains&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="18" lineNum="181" parent="globals/BLE_CS_Delegate" pc="268436790" symbol="&lt;globals/BLE_CS_Delegate/&lt;&gt;contains&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="18" lineNum="182" parent="globals/BLE_CS_Delegate" pc="268436814" symbol="&lt;globals/BLE_CS_Delegate/&lt;&gt;contains&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="18" lineNum="185" parent="globals/BLE_CS_Delegate" pc="268436836" symbol="&lt;globals/BLE_CS_Delegate/&lt;&gt;contains&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="19" lineNum="172" parent="globals/BLE_CS_Delegate" pc="268436839" symbol="onCharacteristicWrite"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="19" lineNum="173" parent="globals/BLE_CS_Delegate" pc="268436841" symbol="onCharacteristicWrite"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="126" parent="globals/BLE_CS_Delegate" pc="268436875" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="127" parent="globals/BLE_CS_Delegate" pc="268436877" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="128" parent="globals/BLE_CS_Delegate" pc="268436888" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="129" parent="globals/BLE_CS_Delegate" pc="268436921" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="130" parent="globals/BLE_CS_Delegate" pc="268436937" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="132" parent="globals/BLE_CS_Delegate" pc="268436953" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="134" parent="globals/BLE_CS_Delegate" pc="268436975" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="135" parent="globals/BLE_CS_Delegate" pc="268437008" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="136" parent="globals/BLE_CS_Delegate" pc="268437024" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="137" parent="globals/BLE_CS_Delegate" pc="268437039" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="20" lineNum="139" parent="globals/BLE_CS_Delegate" pc="268437058" symbol="onConnectedStateChanged"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="21" lineNum="121" parent="globals/BLE_CS_Delegate" pc="268437075" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="21" lineNum="122" parent="globals/BLE_CS_Delegate" pc="268437077" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="21" lineNum="123" parent="globals/BLE_CS_Delegate" pc="268437095" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="22" lineNum="142" parent="globals/BLE_CS_Delegate" pc="268437106" symbol="onScanResults"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="22" lineNum="143" parent="globals/BLE_CS_Delegate" pc="268437110" symbol="onScanResults"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="22" lineNum="148" parent="globals/BLE_CS_Delegate" pc="268437130" symbol="onScanResults"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="22" lineNum="149" parent="globals/BLE_CS_Delegate" pc="268437148" symbol="onScanResults"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="22" lineNum="156" parent="globals/BLE_CS_Delegate" pc="268437199" symbol="onScanResults"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="22" lineNum="157" parent="globals/BLE_CS_Delegate" pc="268437238" symbol="onScanResults"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="22" lineNum="163" parent="globals/BLE_CS_Delegate" pc="268437289" symbol="onScanResults"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="22" lineNum="164" parent="globals/BLE_CS_Delegate" pc="268437310" symbol="onScanResults"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="22" lineNum="165" parent="globals/BLE_CS_Delegate" pc="268437341" symbol="onScanResults"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GARMINRTDBle.mc" id="22" lineNum="166" parent="globals/BLE_CS_Delegate" pc="268437357" symbol="onScanResults"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\bin\\gen\\006-B3121-00\\source\\Rez.mcgen" id="23" lineNum="7" parent="globals/Rez" pc="268437396" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="24" lineNum="6" parent="globals/GarminRTDView" pc="268437420" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="24" lineNum="20" parent="globals/GarminRTDView" pc="268437438" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="24" lineNum="21" parent="globals/GarminRTDView" pc="268437452" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="24" lineNum="22" parent="globals/GarminRTDView" pc="268437466" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="24" lineNum="23" parent="globals/GarminRTDView" pc="268437480" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="24" lineNum="24" parent="globals/GarminRTDView" pc="268437494" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="24" lineNum="25" parent="globals/GarminRTDView" pc="268437508" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="24" lineNum="26" parent="globals/GarminRTDView" pc="268437522" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="35" parent="globals/GarminRTDView" pc="268437537" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="41" parent="globals/GarminRTDView" pc="268437541" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="42" parent="globals/GarminRTDView" pc="268437562" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="43" parent="globals/GarminRTDView" pc="268437575" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="45" parent="globals/GarminRTDView" pc="268437587" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="48" parent="globals/GarminRTDView" pc="268437600" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="49" parent="globals/GarminRTDView" pc="268437611" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="50" parent="globals/GarminRTDView" pc="268437634" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="55" parent="globals/GarminRTDView" pc="268437658" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="57" parent="globals/GarminRTDView" pc="268437677" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="58" parent="globals/GarminRTDView" pc="268437736" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="60" parent="globals/GarminRTDView" pc="268437819" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="62" parent="globals/GarminRTDView" pc="268437868" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="64" parent="globals/GarminRTDView" pc="268437884" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="65" parent="globals/GarminRTDView" pc="268437922" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="66" parent="globals/GarminRTDView" pc="268437943" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="67" parent="globals/GarminRTDView" pc="268437966" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="68" parent="globals/GarminRTDView" pc="268437974" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="69" parent="globals/GarminRTDView" pc="268438030" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="71" parent="globals/GarminRTDView" pc="268438057" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="74" parent="globals/GarminRTDView" pc="268438080" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="75" parent="globals/GarminRTDView" pc="268438127" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="76" parent="globals/GarminRTDView" pc="268438148" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="77" parent="globals/GarminRTDView" pc="268438156" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="78" parent="globals/GarminRTDView" pc="268438200" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="80" parent="globals/GarminRTDView" pc="268438214" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="84" parent="globals/GarminRTDView" pc="268438237" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="85" parent="globals/GarminRTDView" pc="268438304" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="86" parent="globals/GarminRTDView" pc="268438329" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="88" parent="globals/GarminRTDView" pc="268438378" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="90" parent="globals/GarminRTDView" pc="268438563" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="92" parent="globals/GarminRTDView" pc="268438579" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="93" parent="globals/GarminRTDView" pc="268438637" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="95" parent="globals/GarminRTDView" pc="268438695" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="95" parent="globals/GarminRTDView" pc="268438727" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="95" parent="globals/GarminRTDView" pc="268438770" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="96" parent="globals/GarminRTDView" pc="268438800" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="97" parent="globals/GarminRTDView" pc="268438827" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="97" parent="globals/GarminRTDView" pc="268438859" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="97" parent="globals/GarminRTDView" pc="268438902" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="98" parent="globals/GarminRTDView" pc="268438932" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="100" parent="globals/GarminRTDView" pc="268438959" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="101" parent="globals/GarminRTDView" pc="268438982" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="102" parent="globals/GarminRTDView" pc="268438990" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="104" parent="globals/GarminRTDView" pc="268438998" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="104" parent="globals/GarminRTDView" pc="268439027" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="104" parent="globals/GarminRTDView" pc="268439070" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="105" parent="globals/GarminRTDView" pc="268439110" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="105" parent="globals/GarminRTDView" pc="268439139" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="105" parent="globals/GarminRTDView" pc="268439182" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="107" parent="globals/GarminRTDView" pc="268439222" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="108" parent="globals/GarminRTDView" pc="268439278" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="109" parent="globals/GarminRTDView" pc="268439334" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="110" parent="globals/GarminRTDView" pc="268439354" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="112" parent="globals/GarminRTDView" pc="268439387" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="113" parent="globals/GarminRTDView" pc="268439413" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="115" parent="globals/GarminRTDView" pc="268439442" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="118" parent="globals/GarminRTDView" pc="268439516" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="119" parent="globals/GarminRTDView" pc="268439586" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="120" parent="globals/GarminRTDView" pc="268439602" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="122" parent="globals/GarminRTDView" pc="268439618" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="123" parent="globals/GarminRTDView" pc="268439635" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="124" parent="globals/GarminRTDView" pc="268439657" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="126" parent="globals/GarminRTDView" pc="268439682" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="127" parent="globals/GarminRTDView" pc="268439706" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="128" parent="globals/GarminRTDView" pc="268439714" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="129" parent="globals/GarminRTDView" pc="268439758" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="130" parent="globals/GarminRTDView" pc="268439778" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="133" parent="globals/GarminRTDView" pc="268439801" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="134" parent="globals/GarminRTDView" pc="268439891" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="136" parent="globals/GarminRTDView" pc="268439907" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="137" parent="globals/GarminRTDView" pc="268439968" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="138" parent="globals/GarminRTDView" pc="268439989" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="139" parent="globals/GarminRTDView" pc="268440012" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="140" parent="globals/GarminRTDView" pc="268440020" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="141" parent="globals/GarminRTDView" pc="268440076" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="143" parent="globals/GarminRTDView" pc="268440103" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="146" parent="globals/GarminRTDView" pc="268440126" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="147" parent="globals/GarminRTDView" pc="268440196" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="149" parent="globals/GarminRTDView" pc="268440212" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="150" parent="globals/GarminRTDView" pc="268440270" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="150" parent="globals/GarminRTDView" pc="268440302" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="150" parent="globals/GarminRTDView" pc="268440345" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="151" parent="globals/GarminRTDView" pc="268440375" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="153" parent="globals/GarminRTDView" pc="268440402" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="154" parent="globals/GarminRTDView" pc="268440425" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="155" parent="globals/GarminRTDView" pc="268440433" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="156" parent="globals/GarminRTDView" pc="268440489" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="158" parent="globals/GarminRTDView" pc="268440522" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="161" parent="globals/GarminRTDView" pc="268440551" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="162" parent="globals/GarminRTDView" pc="268440630" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="163" parent="globals/GarminRTDView" pc="268440655" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="164" parent="globals/GarminRTDView" pc="268440671" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="165" parent="globals/GarminRTDView" pc="268440684" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="166" parent="globals/GarminRTDView" pc="268440701" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="167" parent="globals/GarminRTDView" pc="268440723" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="170" parent="globals/GarminRTDView" pc="268440748" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="171" parent="globals/GarminRTDView" pc="268440772" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="172" parent="globals/GarminRTDView" pc="268440780" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="173" parent="globals/GarminRTDView" pc="268440824" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="174" parent="globals/GarminRTDView" pc="268440838" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="177" parent="globals/GarminRTDView" pc="268440861" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="178" parent="globals/GarminRTDView" pc="268440901" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="179" parent="globals/GarminRTDView" pc="268440941" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="181" parent="globals/GarminRTDView" pc="268440966" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="182" parent="globals/GarminRTDView" pc="268440987" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="183" parent="globals/GarminRTDView" pc="268440995" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="184" parent="globals/GarminRTDView" pc="268441048" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="186" parent="globals/GarminRTDView" pc="268441062" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="189" parent="globals/GarminRTDView" pc="268441085" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="191" parent="globals/GarminRTDView" pc="268441132" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="194" parent="globals/GarminRTDView" pc="268441197" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="195" parent="globals/GarminRTDView" pc="268441208" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="196" parent="globals/GarminRTDView" pc="268441273" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="197" parent="globals/GarminRTDView" pc="268441296" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="198" parent="globals/GarminRTDView" pc="268441314" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="199" parent="globals/GarminRTDView" pc="268441330" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="25" lineNum="203" parent="globals/GarminRTDView" pc="268441342" symbol="compute"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="26" lineNum="8" parent="globals/GarminRTDView" pc="268441410" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="26" lineNum="9" parent="globals/GarminRTDView" pc="268441412" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="26" lineNum="10" parent="globals/GarminRTDView" pc="268441430" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="26" lineNum="11" parent="globals/GarminRTDView" pc="268441443" symbol="initialize"/>
+<entry filename="C:\\Users\\jarne\\Thesis\\RTDCycling\\Thesis\\GarminRTD\\source\\GarminRTDView.mc" id="26" lineNum="13" parent="globals/GarminRTDView" pc="268441453" symbol="initialize"/>
+</pcToLineNum>
+<symbolTable>
+<entry id="8388639" module="true" symbol="Graphics"/>
+<entry field="true" id="44" symbol="batterypercentprev"/>
+<entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+<entry id="27" method="true" symbol="toArray"/>
+<entry id="7" module="true" symbol="globals/Rez/Menus"/>
+<entry field="true" id="40" symbol="PowerstackB"/>
+<entry field="true" id="17" symbol="_blePaired"/>
+<entry id="11" object="true" symbol="GarminRTDApp"/>
+<entry id="8389683" method="true" symbol="onSettingsChanged"/>
+<entry id="25" method="true" symbol="pair"/>
+<entry field="true" id="30" symbol="&lt;globals/BLE_CS_Delegate/&lt;&gt;_bcs_profile&gt;"/>
+<entry id="26" method="true" symbol="sendstack"/>
+<entry id="21" method="true" symbol="clearfromstack"/>
+<entry id="8391342" symbol="endianness"/>
+<entry field="true" id="13" symbol="_bcs_profile"/>
+<entry field="true" id="8388611" module="true" symbol="Toybox"/>
+<entry field="true" id="53" symbol="powerprev"/>
+<entry field="true" id="41" symbol="&lt;globals/GarminRTDView/&lt;&gt;altitudehex&gt;"/>
+<entry id="8391256" method="true" symbol="onScanResults"/>
+<entry field="true" id="60" symbol="AppName"/>
+<entry field="true" id="8388963" symbol="altitude"/>
+<entry id="8" module="true" symbol="globals/Rez/Strings"/>
+<entry id="8388772" module="true" object="true" symbol="Fonts"/>
+<entry id="8388631" module="true" symbol="Activity"/>
+<entry id="8388648" module="true" symbol="WatchUi"/>
+<entry id="2" module="true" symbol="globals/Rez"/>
+<entry id="8391340" symbol="descriptors"/>
+<entry field="true" id="37" symbol="HRprev"/>
+<entry field="true" id="24" symbol="messagestack"/>
+<entry id="8388771" module="true" object="true" symbol="Drawables"/>
+<entry id="8391258" method="true" symbol="onConnectedStateChanged"/>
+<entry id="33" module="true" symbol="Menus"/>
+<entry id="8389275" method="true" symbol="getApp"/>
+<entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+<entry field="true" id="8388733" symbol="timerTime"/>
+<entry field="true" id="29" symbol="writeBusy"/>
+<entry field="true" id="8388738" symbol="currentSpeed"/>
+<entry id="10" object="true" symbol="BLE_Connect_Send"/>
+<entry field="true" id="19" symbol="_device"/>
+<entry id="8389137" method="true" symbol="compute"/>
+<entry field="true" id="8388742" symbol="currentPower"/>
+<entry id="28" method="true" symbol="unpair"/>
+<entry id="9" object="true" symbol="BLE_CS_Delegate"/>
+<entry id="23" method="true" symbol="isPaired"/>
+<entry id="5" module="true" symbol="globals/Rez/JsonData"/>
+<entry field="true" id="56" symbol="timeprev"/>
+<entry field="true" id="8388911" symbol="distance"/>
+<entry id="8391335" symbol="writeType"/>
+<entry field="true" id="55" symbol="timenow"/>
+<entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+<entry field="true" id="58" symbol="turn"/>
+<entry field="true" id="35" symbol="DiststackB"/>
+<entry id="12" object="true" symbol="GarminRTDView"/>
+<entry id="8388644" module="true" symbol="System"/>
+<entry field="true" id="36" symbol="HR"/>
+<entry field="true" id="46" symbol="commatoo"/>
+<entry field="true" id="54" symbol="speedprev"/>
+<entry id="8388645" module="true" symbol="Time"/>
+<entry id="8388769" module="true" object="true" symbol="Rez"/>
+<entry id="31" method="true" symbol="&lt;globals/BLE_CS_Delegate/&lt;&gt;contains&gt;"/>
+<entry id="8388640" module="true" symbol="Lang"/>
+<entry id="8390088" module="true" object="true" symbol="JsonData"/>
+<entry field="true" id="42" symbol="altitudeprev"/>
+<entry field="true" id="45" symbol="comma"/>
+<entry field="true" id="59" symbol="LauncherIcon"/>
+<entry id="8388610" symbol="statics"/>
+<entry field="true" id="22" symbol="connectedtimer"/>
+<entry id="8389350" module="true" symbol="globals"/>
+<entry id="8391334" symbol="uuid"/>
+<entry field="true" id="8388958" symbol="speed"/>
+<entry id="8388770" module="true" object="true" symbol="Strings"/>
+<entry field="true" id="57" symbol="&lt;globals/GarminRTDView/&lt;&gt;tokmh&gt;"/>
+<entry field="true" id="47" symbol="&lt;globals/GarminRTDView/&lt;&gt;displaytext&gt;"/>
+<entry id="8388702" method="true" symbol="initialize"/>
+<entry field="true" id="48" symbol="distanceprev"/>
+<entry id="8389279" method="true" symbol="onStart"/>
+<entry field="true" id="8388961" symbol="power"/>
+<entry field="true" id="49" symbol="&lt;globals/GarminRTDView/&lt;&gt;lasttimer&gt;"/>
+<entry field="true" id="8388736" symbol="currentLocation"/>
+<entry field="true" id="8388747" symbol="currentHeartRate"/>
+<entry id="8389280" method="true" symbol="getInitialView"/>
+<entry id="8389281" method="true" symbol="onStop"/>
+<entry field="true" id="18" symbol="_bledelegate"/>
+<entry field="true" id="43" symbol="batterypercent"/>
+<entry field="true" id="52" symbol="&lt;globals/GarminRTDView/&lt;&gt;powerhex&gt;"/>
+<entry id="8391341" symbol="characteristics"/>
+<entry field="true" id="8388734" symbol="elapsedDistance"/>
+<entry id="8388646" module="true" object="true" symbol="Timer"/>
+<entry field="true" id="38" symbol="LatstackB"/>
+<entry id="32" module="true" symbol="Layouts"/>
+<entry id="20" method="true" symbol="addmessage"/>
+<entry field="true" id="16" symbol="UUID_ESP_S"/>
+<entry field="true" id="39" symbol="LonstackB"/>
+<entry field="true" id="15" symbol="UUID_ESP_C"/>
+<entry id="8391260" method="true" symbol="onCharacteristicWrite"/>
+<entry id="4" module="true" symbol="globals/Rez/Fonts"/>
+<entry field="true" id="50" symbol="location"/>
+<entry id="8388635" module="true" symbol="Application"/>
+<entry field="true" id="14" symbol="BLE_CS_Profile"/>
+<entry field="true" id="51" symbol="locationprev"/>
+<entry field="true" id="34" symbol="AltstackB"/>
+</symbolTable>
+<localVars>
+<entry arg="true" endPc="268435515" name="state" stackId="1" startPc="268435479"/>
+<entry arg="true" endPc="268435851" name="msg" stackId="1" startPc="268435799"/>
+<entry endPc="268436176" name="ble_charact" stackId="1" startPc="268436042"/>
+<entry endPc="268436238" name="ex" stackId="2" startPc="268436183"/>
+<entry arg="true" endPc="268436544" name="string" stackId="1" startPc="268436382"/>
+<entry arg="true" endPc="268436544" name="splitter" stackId="2" startPc="268436382"/>
+<entry endPc="268436544" name="array" stackId="3" startPc="268436386"/>
+<entry endPc="268436544" name="index" stackId="4" startPc="268436386"/>
+<entry endPc="268436544" name="location" stackId="5" startPc="268436386"/>
+<entry endPc="268436544" name="result" stackId="6" startPc="268436386"/>
+<entry endPc="268436541" name="i" stackId="7" startPc="268436525"/>
+<entry arg="true" endPc="268436838" name="iter" stackId="1" startPc="268436750"/>
+<entry arg="true" endPc="268436838" name="obj" stackId="2" startPc="268436750"/>
+<entry endPc="268436835" name="uuid" stackId="3" startPc="268436774"/>
+<entry arg="true" endPc="268436874" name="characteristic" stackId="1" startPc="268436839"/>
+<entry arg="true" endPc="268436874" name="status" stackId="2" startPc="268436839"/>
+<entry arg="true" endPc="268437074" name="device" stackId="1" startPc="268436875"/>
+<entry arg="true" endPc="268437074" name="state" stackId="2" startPc="268436875"/>
+<entry arg="true" endPc="268437105" name="bcs" stackId="1" startPc="268437075"/>
+<entry arg="true" endPc="268437395" name="scanResults" stackId="1" startPc="268437106"/>
+<entry endPc="268437394" name="result" stackId="2" startPc="268437130"/>
+<entry arg="true" endPc="268441409" name="info" stackId="1" startPc="268437537"/>
+<entry endPc="268441409" name="myTime" stackId="2" startPc="268437541"/>
+<entry endPc="268438076" name="TimestackB" stackId="3" startPc="268437868"/>
+<entry endPc="268438056" name="i" stackId="4" startPc="268437966"/>
+<entry endPc="268438043" name="tempbyte" stackId="5" startPc="268437966"/>
+<entry endPc="268438233" name="HRstackB" stackId="6" startPc="268438127"/>
+<entry endPc="268438233" name="tempbyte" stackId="7" startPc="268438127"/>
+<entry endPc="268439386" name="i" stackId="8" startPc="268438982"/>
+<entry endPc="268439373" name="tempbyte" stackId="9" startPc="268438982"/>
+<entry endPc="268439373" name="tempbytetoo" stackId="10" startPc="268438982"/>
+<entry endPc="268439797" name="PowerstackB" stackId="11" startPc="268439586"/>
+<entry endPc="268439797" name="tempbyte" stackId="12" startPc="268439586"/>
+<entry endPc="268440122" name="SpeedstackB" stackId="13" startPc="268439891"/>
+<entry endPc="268440102" name="i" stackId="14" startPc="268440012"/>
+<entry endPc="268440089" name="tempbyte" stackId="15" startPc="268440012"/>
+<entry endPc="268440521" name="i" stackId="16" startPc="268440425"/>
+<entry endPc="268440508" name="tempbyte" stackId="17" startPc="268440425"/>
+<entry endPc="268440857" name="AltstackB" stackId="18" startPc="268440630"/>
+<entry endPc="268440857" name="tempbyte" stackId="19" startPc="268440630"/>
+<entry endPc="268441081" name="BattstackB" stackId="20" startPc="268440941"/>
+<entry endPc="268441081" name="tempbyte" stackId="21" startPc="268440941"/>
+<entry arg="true" endPc="268441471" name="bcs" stackId="1" startPc="268441410"/>
+</localVars>
+<annotations>
+<annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+</annotations>
+<dataEntryOffsetMappings>
+<dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
+<dataEntry label="globals/GarminRTDApp" offset="174" parentId="globals" symbolId="GarminRTDApp" type="class"/>
+<dataEntry label="globals/BLE_Connect_Send" offset="261" parentId="globals" symbolId="BLE_Connect_Send" type="class"/>
+<dataEntry label="globals/BLE_CS_Delegate" offset="436" parentId="globals" symbolId="BLE_CS_Delegate" type="class"/>
+<dataEntry label="globals/Rez" offset="523" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry label="globals/GarminRTDView" offset="602" parentId="globals" symbolId="GarminRTDView" type="class"/>
+<dataEntry label="globals/Rez/Drawables" offset="897" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry label="globals/Rez/Layouts" offset="936" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry label="globals/Rez/Menus" offset="967" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry label="globals/Rez/Fonts" offset="998" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry label="globals/Rez/Strings" offset="1029" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry label="globals/Rez/JsonData" offset="1068" parentId="Rez" symbolId="JsonData" type="module"/>
+</dataEntryOffsetMappings>
+<functions>
+<functionEntry accessMode="public" endPc="268435478" name="&lt;init&gt;" parent="GarminRTDApp" startPc="268435460">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435515" name="onStart" parent="GarminRTDApp" startPc="268435479">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onSettingsChanged" parent="GarminRTDApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435566" name="getInitialView" parent="GarminRTDApp" startPc="268435516">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435587" name="initialize" parent="GarminRTDApp" startPc="268435567">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435590" name="onStop" parent="GarminRTDApp" startPc="268435588">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435616" name="getApp" startPc="268435591">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435798" name="&lt;init&gt;" parent="BLE_Connect_Send" startPc="268435617">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435851" name="addmessage" parent="BLE_Connect_Send" startPc="268435799">
+<param id="msg"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435911" name="pair" parent="BLE_Connect_Send" startPc="268435852">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436290" name="sendstack" parent="BLE_Connect_Send" startPc="268435912">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436331" name="isPaired" parent="BLE_Connect_Send" startPc="268436291">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436381" name="clearfromstack" parent="BLE_Connect_Send" startPc="268436332">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436544" name="toArray" parent="BLE_Connect_Send" startPc="268436382">
+<param id="string"/>
+<param id="splitter"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436622" name="unpair" parent="BLE_Connect_Send" startPc="268436545">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436730" name="initialize" parent="BLE_Connect_Send" startPc="268436623">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436749" name="&lt;init&gt;" parent="BLE_CS_Delegate" startPc="268436731">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="private" endPc="268436838" name="&lt;globals/BLE_CS_Delegate/&lt;&gt;contains&gt;" parent="BLE_CS_Delegate" startPc="268436750">
+<param id="iter"/>
+<param id="obj"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436874" name="onCharacteristicWrite" parent="BLE_CS_Delegate" startPc="268436839">
+<param id="characteristic"/>
+<param id="status"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437074" name="onConnectedStateChanged" parent="BLE_CS_Delegate" startPc="268436875">
+<param id="device"/>
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437105" name="initialize" parent="BLE_CS_Delegate" startPc="268437075">
+<param id="bcs"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437395" name="onScanResults" parent="BLE_CS_Delegate" startPc="268437106">
+<param id="scanResults"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437419" name="&lt;init&gt;" parent="Rez" startPc="268437396">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437536" name="&lt;init&gt;" parent="GarminRTDView" startPc="268437420">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268441409" name="compute" parent="GarminRTDView" startPc="268437537">
+<param id="info"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268441471" name="initialize" parent="GarminRTDView" startPc="268441410">
+<param id="bcs"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Menus">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Fonts">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="JsonData">
+<documentation/>
+</functionEntry>
+</functions>
+</debugInfo>

@@ -1,0 +1,1581 @@
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 1; ]
+import Toybox.Activity;
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 3; ]
+import Toybox.Time;
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 4; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 6; ]
+class GarminRTDView extends WatchUi.SimpleDataField{
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 6; ]
+    <init> {
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 20 6 ]
+        %tmp.2 = 0;
+        %tmp.1 = newba %tmp.2;
+        putv self :comma %tmp.1;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 21 6 ]
+        %tmp.4 = 0;
+        %tmp.3 = newba %tmp.4;
+        putv self :commatoo %tmp.3;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 22 6 ]
+        %tmp.6 = 0;
+        %tmp.5 = newba %tmp.6;
+        putv self :LonstackB %tmp.5;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 23 6 ]
+        %tmp.8 = 0;
+        %tmp.7 = newba %tmp.8;
+        putv self :LatstackB %tmp.7;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 24 6 ]
+        %tmp.10 = 0;
+        %tmp.9 = newba %tmp.10;
+        putv self :DiststackB %tmp.9;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 25 6 ]
+        %tmp.12 = 0;
+        %tmp.11 = newba %tmp.12;
+        putv self :AltstackB %tmp.11;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 26 6 ]
+        %tmp.14 = 0;
+        %tmp.13 = newba %tmp.14;
+        putv self :PowerstackB %tmp.13;
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 7; @position = 6; ]
+    var _bcs_profile;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 8; ]
+    function initialize(bcs) as Void {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_8_27_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 9 4 ]
+        %tmp.2 = getv ? :SimpleDataField;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 10 4 ]
+        %tmp.4 = "RTD";
+        putv self :label %tmp.4;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 11 4 ]
+        %tmp.6 = lgetv %bcs;
+        putv self :_bcs_profile %tmp.6;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 13 4 ]
+        %tmp.8 = getv ? :_bcs_profile;
+        %tmp.9 = getv function %tmp.8 :pair;
+        invoke %tmp.8 %tmp.9();
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_8_27_stop:
+    }
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 17; @position = 6; ]
+    var turn = 0;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 18; @position = 6; ]
+    var HR;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 18; @position = 10; ]
+    var location;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 18; @position = 20; ]
+    var power;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 18; @position = 27; ]
+    var distance;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 18; @position = 37; ]
+    var speed;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 18; @position = 44; ]
+    var batterypercent;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 18; @position = 60; ]
+    var timenow;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 18; @position = 69; ]
+    var altitude;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 19; @position = 6; ]
+    var HRprev;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 19; @position = 14; ]
+    var locationprev;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 19; @position = 28; ]
+    var powerprev;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 19; @position = 39; ]
+    var distanceprev;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 19; @position = 53; ]
+    var speedprev;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 19; @position = 64; ]
+    var timeprev;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 19; @position = 74; ]
+    var altitudeprev;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 20; @position = 6; ]
+    var comma;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 21; @position = 6; ]
+    var commatoo;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 22; @position = 6; ]
+    var LonstackB;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 23; @position = 6; ]
+    var LatstackB;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 24; @position = 6; ]
+    var DiststackB;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 25; @position = 6; ]
+    var AltstackB;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 26; @position = 6; ]
+    var PowerstackB;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 28; @position = 6; ]
+    var batterypercentprev = 1;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 29; @position = 14; ]
+    private
+    var powerhex = 0x03;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 30; @position = 14; ]
+    private
+    var altitudehex = 0x06;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 31; @position = 14; ]
+    private
+    var lasttimer = 0;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 32; @position = 14; ]
+    private
+    var tokmh = 3.6;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 33; @position = 14; ]
+    private
+    var displaytext;
+    [ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 35; ]
+    function compute(info as Activity.Info) as Numeric or Duration or String or Null {
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_37_45_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 41 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_41_4_if_stmt:
+        %tmp.2 = getv ? :_bcs_profile;
+        %tmp.3 = getv function %tmp.2 :isPaired;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = not %tmp.4;
+        bf %tmp.5 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_41_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_41_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_41_34_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 42 6 ]
+        %tmp.6 = "not connected";
+        putv self :displaytext %tmp.6;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 43 6 ]
+        %tmp.8 = getv ? :displaytext;
+        ret %tmp.8;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_41_34_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_41_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_41_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 45 4 ]
+        %tmp.9 = "connected";
+        putv self :displaytext %tmp.9;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 48 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_48_4_if_stmt:
+        %tmp.11 = lgetv %info;
+        %tmp.13 = const :timerTime;
+        %tmp.14 = canhazplz %tmp.11 %tmp.13;
+        bf %tmp.14 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_48_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_48_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_48_29_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 49 6 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_49_6_if_stmt:
+        %tmp.16 = getv ? :_bcs_profile;
+        %tmp.17 = getv %tmp.16 :connectedtimer;
+        %tmp.18 = 0;
+        %tmp.19 = eq %tmp.17 %tmp.18;
+        bf %tmp.19 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_49_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_49_6_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_49_44_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 50 8 ]
+        %tmp.21 = getv ? :_bcs_profile;
+        %tmp.22 = getv function %tmp.21 :sendstack;
+        invoke %tmp.21 %tmp.22();
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_49_44_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_49_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_49_6_if_end:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_48_29_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_48_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_48_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 55 4 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_37_45_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_37_45_stop" ]
+        %myTime.1 = local;
+        %tmp.24 = getv ? :System;
+        %tmp.25 = getv function %tmp.24 :getClockTime;
+        %tmp.26 = invoke %tmp.24 %tmp.25();
+        lputv %myTime.1 %tmp.26;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 57 4 ]
+        %tmp.27 = lgetv %myTime.1;
+        %tmp.28 = getv %tmp.27 :hour;
+        %tmp.29 = getv function %tmp.28 :format;
+        %tmp.30 = "%02d";
+        %tmp.31 = invoke %tmp.28 %tmp.29(%tmp.30);
+        %tmp.32 = ".";
+        %tmp.33 = add %tmp.31 %tmp.32;
+        %tmp.34 = lgetv %myTime.1;
+        %tmp.35 = getv %tmp.34 :min;
+        %tmp.36 = getv function %tmp.35 :format;
+        %tmp.37 = "%02d";
+        %tmp.38 = invoke %tmp.35 %tmp.36(%tmp.37);
+        %tmp.39 = add %tmp.33 %tmp.38;
+        putv self :timenow %tmp.39;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 58 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_58_15_begin:
+        %tmp.41 = getv ? :timeprev;
+        %tmp.42 = null;
+        %tmp.43 = eq %tmp.41 %tmp.42;
+        bf %tmp.43 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_58_15_false;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_58_15_true:
+        %tmp.44 = lgetv %myTime.1;
+        %tmp.45 = getv %tmp.44 :hour;
+        %tmp.46 = getv function %tmp.45 :format;
+        %tmp.47 = "%02d";
+        %tmp.48 = invoke %tmp.45 %tmp.46(%tmp.47);
+        %tmp.49 = ".";
+        %tmp.50 = add %tmp.48 %tmp.49;
+        %tmp.51 = lgetv %myTime.1;
+        %tmp.52 = getv %tmp.51 :min;
+        %tmp.53 = getv function %tmp.52 :format;
+        %tmp.54 = "%02d";
+        %tmp.55 = invoke %tmp.52 %tmp.53(%tmp.54);
+        %tmp.56 = add %tmp.50 %tmp.55;
+        push %tmp.56;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_58_15_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_58_15_false:
+        %tmp.58 = getv ? :timeprev;
+        push %tmp.58;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_58_15_end:
+        %tmp.59 = phi [%tmp.43 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_58_15_begin] [%tmp.56 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_58_15_true] [%tmp.58 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_58_15_false] [%tmp.59 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_58_15_end];
+        putv self :timeprev %tmp.59;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 60 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_4_if_stmt:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_8_begin:
+        %tmp.61 = getv ? :turn;
+        %tmp.62 = 0;
+        %tmp.63 = eq %tmp.61 %tmp.62;
+        %tmp.64 = dup %tmp.63;
+        bf %tmp.64 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_21_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_21_true:
+        %tmp.66 = getv ? :timenow;
+        %tmp.67 = getv function %tmp.66 :equals;
+        %tmp.69 = getv ? :timeprev;
+        %tmp.70 = invoke %tmp.66 %tmp.67(%tmp.69);
+        %tmp.71 = not %tmp.70;
+        %tmp.72 = and %tmp.63 %tmp.71;
+        push %tmp.72;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_21_end:
+        %tmp.73 = phi [%tmp.64 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_8_begin] [%tmp.72 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_21_true] [%tmp.73 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_21_end];
+        bf %tmp.73 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_48_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 62 6 ]
+        %tmp.75 = getv ? :timenow;
+        putv self :timeprev %tmp.75;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 64 6 ]
+        %tmp.77 = getv ? :_bcs_profile;
+        %tmp.78 = getv function %tmp.77 :toArray;
+        %tmp.80 = getv ? :timenow;
+        %tmp.81 = ".";
+        %tmp.82 = invoke %tmp.77 %tmp.78(%tmp.80, %tmp.81);
+        putv self :comma %tmp.82;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 65 6 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_48_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_48_stop" ]
+        %TimestackB.2 = local;
+        %tmp.83 = newba 1;
+        %tmp.84 = 0x00;
+        %tmp.85 = dup %tmp.83;
+        %tmp.86 = aputv %tmp.85 0 %tmp.84;
+        lputv %TimestackB.2 %tmp.86;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 66 6 ]
+        for @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_test @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_incr @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_init:
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_begin" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_end" ]
+        %i.3 = local;
+        %tmp.87 = 0;
+        lputv %i.3 %tmp.87;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_test:
+        %tmp.89 = getv ? :comma;
+        %tmp.91 = lgetv %i.3;
+        %tmp.92 = agetv %tmp.89 %tmp.91;
+        %tmp.93 = null;
+        %tmp.94 = ne %tmp.92 %tmp.93;
+        bf %tmp.94 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_44_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 67 8 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_44_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_44_stop" ]
+        %tempbyte.4 = local;
+        %tmp.96 = 1;
+        %tmp.95 = newba %tmp.96;
+        lputv %tempbyte.4 %tmp.95;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 68 8 ]
+        %tmp.97 = lgetv %tempbyte.4;
+        %tmp.98 = getv function %tmp.97 :encodeNumber;
+        %tmp.100 = getv ? :comma;
+        %tmp.102 = lgetv %i.3;
+        %tmp.103 = agetv %tmp.100 %tmp.102;
+        %tmp.104 = getv function %tmp.103 :toNumber;
+        %tmp.105 = invoke %tmp.103 %tmp.104();
+        %tmp.106 = getm $.Toybox.Lang;
+        %tmp.107 = getv %tmp.106 :NUMBER_FORMAT_UINT8;
+        %tmp.108 = newd 1;
+        %tmp.110 = const :endianness;
+        %tmp.111 = getm $.Toybox.Lang;
+        %tmp.112 = getv %tmp.111 :ENDIAN_LITTLE;
+        %tmp.113 = dup %tmp.108;
+        %tmp.114 = aputv %tmp.113 %tmp.110 %tmp.112;
+        invoke %tmp.97 %tmp.98(%tmp.105, %tmp.107, %tmp.114);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 69 8 ]
+        %tmp.115 = lgetv %TimestackB.2;
+        %tmp.116 = getv function %tmp.115 :addAll;
+        %tmp.118 = lgetv %tempbyte.4;
+        invoke %tmp.115 %tmp.116(%tmp.118);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_44_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_incr:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 66 ]
+        %tmp.121 = lgetv %i.3;
+        %tmp.122 = add %tmp.121 1;
+        lputv %i.3 %tmp.122;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_test;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_66_6_for_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 71 6 ]
+        %tmp.124 = getv ? :_bcs_profile;
+        %tmp.125 = getv function %tmp.124 :addmessage;
+        %tmp.127 = lgetv %TimestackB.2;
+        invoke %tmp.124 %tmp.125(%tmp.127);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_48_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_60_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 74 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_4_if_stmt:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_8_begin:
+        %tmp.129 = lgetv %info;
+        %tmp.131 = const :currentHeartRate;
+        %tmp.132 = canhazplz %tmp.129 %tmp.131;
+        %tmp.133 = dup %tmp.132;
+        bf %tmp.133 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_38_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_38_true:
+        %tmp.135 = getv ? :turn;
+        %tmp.136 = 1;
+        %tmp.137 = eq %tmp.135 %tmp.136;
+        %tmp.138 = and %tmp.132 %tmp.137;
+        push %tmp.138;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_38_end:
+        %tmp.139 = phi [%tmp.133 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_8_begin] [%tmp.138 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_38_true] [%tmp.139 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_38_end];
+        %tmp.140 = dup %tmp.139;
+        bf %tmp.140 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_51_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_51_true:
+        %tmp.141 = lgetv %info;
+        %tmp.142 = as %tmp.141 { (interface { var currentHeartRate; }) };
+        %tmp.143 = getv %tmp.142 :currentHeartRate;
+        %tmp.144 = null;
+        %tmp.145 = ne %tmp.143 %tmp.144;
+        %tmp.146 = and %tmp.139 %tmp.145;
+        push %tmp.146;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_51_end:
+        %tmp.147 = phi [%tmp.140 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_8_begin] [%tmp.146 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_51_true] [%tmp.147 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_51_end];
+        bf %tmp.147 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_82_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 75 6 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_82_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_82_stop" ]
+        %HRstackB.5 = local;
+        %tmp.148 = newba 1;
+        %tmp.149 = 0x01;
+        %tmp.150 = dup %tmp.148;
+        %tmp.151 = aputv %tmp.150 0 %tmp.149;
+        lputv %HRstackB.5 %tmp.151;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 76 6 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_82_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_82_stop" ]
+        %tempbyte.6 = local;
+        %tmp.153 = 1;
+        %tmp.152 = newba %tmp.153;
+        lputv %tempbyte.6 %tmp.152;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 77 6 ]
+        %tmp.154 = lgetv %tempbyte.6;
+        %tmp.155 = getv function %tmp.154 :encodeNumber;
+        %tmp.156 = lgetv %info;
+        %tmp.157 = as %tmp.156 { (interface { var currentHeartRate; }) };
+        %tmp.158 = getv %tmp.157 :currentHeartRate;
+        %tmp.159 = getm $.Toybox.Lang;
+        %tmp.160 = getv %tmp.159 :NUMBER_FORMAT_UINT8;
+        %tmp.161 = newd 1;
+        %tmp.163 = const :endianness;
+        %tmp.164 = getm $.Toybox.Lang;
+        %tmp.165 = getv %tmp.164 :ENDIAN_LITTLE;
+        %tmp.166 = dup %tmp.161;
+        %tmp.167 = aputv %tmp.166 %tmp.163 %tmp.165;
+        invoke %tmp.154 %tmp.155(%tmp.158, %tmp.160, %tmp.167);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 78 6 ]
+        %tmp.168 = lgetv %HRstackB.5;
+        %tmp.169 = getv function %tmp.168 :addAll;
+        %tmp.171 = lgetv %tempbyte.6;
+        invoke %tmp.168 %tmp.169(%tmp.171);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 80 6 ]
+        %tmp.173 = getv ? :_bcs_profile;
+        %tmp.174 = getv function %tmp.173 :addmessage;
+        %tmp.176 = lgetv %HRstackB.5;
+        invoke %tmp.173 %tmp.174(%tmp.176);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_82_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_74_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 84 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_4_if_stmt:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_8_begin:
+        %tmp.178 = lgetv %info;
+        %tmp.180 = const :currentLocation;
+        %tmp.181 = canhazplz %tmp.178 %tmp.180;
+        %tmp.182 = dup %tmp.181;
+        bf %tmp.182 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_37_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_37_true:
+        %tmp.183 = lgetv %info;
+        %tmp.184 = as %tmp.183 { (interface { var currentLocation; }) };
+        %tmp.185 = getv %tmp.184 :currentLocation;
+        %tmp.186 = null;
+        %tmp.187 = ne %tmp.185 %tmp.186;
+        %tmp.188 = and %tmp.181 %tmp.187;
+        push %tmp.188;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_37_end:
+        %tmp.189 = phi [%tmp.182 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_8_begin] [%tmp.188 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_37_true] [%tmp.189 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_37_end];
+        %tmp.190 = dup %tmp.189;
+        bf %tmp.190 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_69_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_69_true:
+        %tmp.191 = lgetv %info;
+        %tmp.192 = as %tmp.191 { (interface { var currentLocation; }) };
+        %tmp.193 = getv %tmp.192 :currentLocationAccuracy;
+        %tmp.194 = 2;
+        %tmp.195 = gt %tmp.193 %tmp.194;
+        %tmp.196 = and %tmp.189 %tmp.195;
+        push %tmp.196;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_69_end:
+        %tmp.197 = phi [%tmp.190 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_8_begin] [%tmp.196 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_69_true] [%tmp.197 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_69_end];
+        %tmp.198 = dup %tmp.197;
+        bf %tmp.198 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_105_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_105_true:
+        %tmp.200 = getv ? :turn;
+        %tmp.201 = 2;
+        %tmp.202 = eq %tmp.200 %tmp.201;
+        %tmp.203 = and %tmp.197 %tmp.202;
+        push %tmp.203;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_105_end:
+        %tmp.204 = phi [%tmp.198 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_8_begin] [%tmp.203 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_105_true] [%tmp.204 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_105_end];
+        bf %tmp.204 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_116_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 85 6 ]
+        %tmp.205 = lgetv %info;
+        %tmp.206 = as %tmp.205 { (interface { var currentLocation; }) };
+        %tmp.207 = getv %tmp.206 :currentLocation;
+        %tmp.208 = getv function %tmp.207 :toDegrees;
+        %tmp.209 = invoke %tmp.207 %tmp.208();
+        putv self :location %tmp.209;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 86 6 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_86_21_begin:
+        %tmp.211 = getv ? :locationprev;
+        %tmp.212 = null;
+        %tmp.213 = eq %tmp.211 %tmp.212;
+        bf %tmp.213 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_86_21_false;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_86_21_true:
+        %tmp.214 = lgetv %info;
+        %tmp.215 = as %tmp.214 { (interface { var currentLocation; }) };
+        %tmp.216 = getv %tmp.215 :currentLocation;
+        %tmp.217 = getv function %tmp.216 :toDegrees;
+        %tmp.218 = invoke %tmp.216 %tmp.217();
+        push %tmp.218;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_86_21_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_86_21_false:
+        %tmp.220 = getv ? :locationprev;
+        push %tmp.220;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_86_21_end:
+        %tmp.221 = phi [%tmp.213 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_86_21_begin] [%tmp.218 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_86_21_true] [%tmp.220 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_86_21_false] [%tmp.221 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_86_21_end];
+        putv self :locationprev %tmp.221;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 88 6 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_6_if_stmt:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_10_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_10_begin:
+        %tmp.223 = getv ? :locationprev;
+        %tmp.224 = 0;
+        %tmp.225 = agetv %tmp.223 %tmp.224;
+        %tmp.226 = null;
+        %tmp.227 = ne %tmp.225 %tmp.226;
+        %tmp.228 = dup %tmp.227;
+        bf %tmp.228 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_37_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_37_true:
+        %tmp.230 = getv ? :locationprev;
+        %tmp.231 = 1;
+        %tmp.232 = agetv %tmp.230 %tmp.231;
+        %tmp.233 = null;
+        %tmp.234 = ne %tmp.232 %tmp.233;
+        %tmp.235 = and %tmp.227 %tmp.234;
+        push %tmp.235;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_37_end:
+        %tmp.236 = phi [%tmp.228 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_10_begin] [%tmp.235 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_37_true] [%tmp.236 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_37_end];
+        %tmp.237 = dup %tmp.236;
+        bf %tmp.237 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_11_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_11_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_12_begin:
+        %tmp.239 = getv ? :location;
+        %tmp.240 = 0;
+        %tmp.241 = agetv %tmp.239 %tmp.240;
+        %tmp.242 = getv function %tmp.241 :format;
+        %tmp.243 = "%.4f";
+        %tmp.244 = invoke %tmp.241 %tmp.242(%tmp.243);
+        %tmp.245 = getv function %tmp.244 :equals;
+        %tmp.247 = getv ? :locationprev;
+        %tmp.248 = 0;
+        %tmp.249 = agetv %tmp.247 %tmp.248;
+        %tmp.250 = getv function %tmp.249 :format;
+        %tmp.251 = "%.4f";
+        %tmp.252 = invoke %tmp.249 %tmp.250(%tmp.251);
+        %tmp.253 = invoke %tmp.244 %tmp.245(%tmp.252);
+        %tmp.254 = not %tmp.253;
+        %tmp.255 = dup %tmp.254;
+        bt %tmp.255 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_82_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_82_false:
+        %tmp.257 = getv ? :location;
+        %tmp.258 = 1;
+        %tmp.259 = agetv %tmp.257 %tmp.258;
+        %tmp.260 = getv function %tmp.259 :format;
+        %tmp.261 = "%.4f";
+        %tmp.262 = invoke %tmp.259 %tmp.260(%tmp.261);
+        %tmp.263 = getv function %tmp.262 :equals;
+        %tmp.265 = getv ? :locationprev;
+        %tmp.266 = 1;
+        %tmp.267 = agetv %tmp.265 %tmp.266;
+        %tmp.268 = getv function %tmp.267 :format;
+        %tmp.269 = "%.4f";
+        %tmp.270 = invoke %tmp.267 %tmp.268(%tmp.269);
+        %tmp.271 = invoke %tmp.262 %tmp.263(%tmp.270);
+        %tmp.272 = not %tmp.271;
+        %tmp.273 = or %tmp.254 %tmp.272;
+        push %tmp.273;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_82_end:
+        %tmp.274 = phi [%tmp.255 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_12_begin] [%tmp.273 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_82_false] [%tmp.274 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_82_end];
+        %tmp.275 = and %tmp.236 %tmp.274;
+        push %tmp.275;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_11_end:
+        %tmp.276 = phi [%tmp.237 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_10_begin] [%tmp.275 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_11_true] [%tmp.276 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_11_end];
+        bf %tmp.276 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_6_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_150_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 90 8 ]
+        %tmp.278 = getv ? :location;
+        putv self :locationprev %tmp.278;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 92 8 ]
+        %tmp.280 = getv ? :_bcs_profile;
+        %tmp.281 = getv function %tmp.280 :toArray;
+        %tmp.283 = getv ? :location;
+        %tmp.284 = 0;
+        %tmp.285 = agetv %tmp.283 %tmp.284;
+        %tmp.286 = getv function %tmp.285 :format;
+        %tmp.287 = "%.4f";
+        %tmp.288 = invoke %tmp.285 %tmp.286(%tmp.287);
+        %tmp.289 = ".";
+        %tmp.290 = invoke %tmp.280 %tmp.281(%tmp.288, %tmp.289);
+        putv self :comma %tmp.290;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 93 8 ]
+        %tmp.292 = getv ? :_bcs_profile;
+        %tmp.293 = getv function %tmp.292 :toArray;
+        %tmp.295 = getv ? :location;
+        %tmp.296 = 1;
+        %tmp.297 = agetv %tmp.295 %tmp.296;
+        %tmp.298 = getv function %tmp.297 :format;
+        %tmp.299 = "%.4f";
+        %tmp.300 = invoke %tmp.297 %tmp.298(%tmp.299);
+        %tmp.301 = ".";
+        %tmp.302 = invoke %tmp.292 %tmp.293(%tmp.300, %tmp.301);
+        putv self :commatoo %tmp.302;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 95 8 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_95_8_if_stmt:
+        %tmp.304 = getv ? :comma;
+        %tmp.305 = 0;
+        %tmp.306 = agetv %tmp.304 %tmp.305;
+        %tmp.307 = getv function %tmp.306 :toNumber;
+        %tmp.308 = invoke %tmp.306 %tmp.307();
+        %tmp.309 = 0;
+        %tmp.310 = lt %tmp.308 %tmp.309;
+        bf %tmp.310 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_95_8_if_false;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_95_8_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_95_37_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 95 38 ]
+        %tmp.311 = getv self :comma;
+        %tmp.313 = getv ? :comma;
+        %tmp.314 = 0;
+        %tmp.315 = agetv %tmp.313 %tmp.314;
+        %tmp.316 = getv function %tmp.315 :toNumber;
+        %tmp.317 = invoke %tmp.315 %tmp.316();
+        %tmp.318 = 1;
+        %tmp.319 = sub 0 %tmp.318;
+        %tmp.320 = mul %tmp.317 %tmp.319;
+        %tmp.321 = 0;
+        aputv %tmp.311 %tmp.321 %tmp.320;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 95 75 ]
+        %tmp.322 = newba 1;
+        %tmp.323 = 0x20;
+        %tmp.324 = dup %tmp.322;
+        %tmp.325 = aputv %tmp.324 0 %tmp.323;
+        putv self :LatstackB %tmp.325;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_95_37_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_95_8_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_95_8_if_false:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_96_13_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 96 15 ]
+        %tmp.326 = newba 1;
+        %tmp.327 = 0x02;
+        %tmp.328 = dup %tmp.326;
+        %tmp.329 = aputv %tmp.328 0 %tmp.327;
+        putv self :LatstackB %tmp.329;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_96_13_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_95_8_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 97 8 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_97_8_if_stmt:
+        %tmp.331 = getv ? :commatoo;
+        %tmp.332 = 0;
+        %tmp.333 = agetv %tmp.331 %tmp.332;
+        %tmp.334 = getv function %tmp.333 :toNumber;
+        %tmp.335 = invoke %tmp.333 %tmp.334();
+        %tmp.336 = 0;
+        %tmp.337 = lt %tmp.335 %tmp.336;
+        bf %tmp.337 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_97_8_if_false;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_97_8_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_97_40_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 97 41 ]
+        %tmp.338 = getv self :commatoo;
+        %tmp.340 = getv ? :commatoo;
+        %tmp.341 = 0;
+        %tmp.342 = agetv %tmp.340 %tmp.341;
+        %tmp.343 = getv function %tmp.342 :toNumber;
+        %tmp.344 = invoke %tmp.342 %tmp.343();
+        %tmp.345 = 1;
+        %tmp.346 = sub 0 %tmp.345;
+        %tmp.347 = mul %tmp.344 %tmp.346;
+        %tmp.348 = 0;
+        aputv %tmp.338 %tmp.348 %tmp.347;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 97 84 ]
+        %tmp.349 = newba 1;
+        %tmp.350 = 0x2A;
+        %tmp.351 = dup %tmp.349;
+        %tmp.352 = aputv %tmp.351 0 %tmp.350;
+        putv self :LonstackB %tmp.352;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_97_40_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_97_8_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_97_8_if_false:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_98_13_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 98 15 ]
+        %tmp.353 = newba 1;
+        %tmp.354 = 0x0C;
+        %tmp.355 = dup %tmp.353;
+        %tmp.356 = aputv %tmp.355 0 %tmp.354;
+        putv self :LonstackB %tmp.356;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_98_13_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_97_8_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 100 8 ]
+        for @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_test @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_incr @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_init:
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_begin" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_end" ]
+        %i.7 = local;
+        %tmp.357 = 0;
+        lputv %i.7 %tmp.357;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_test:
+        %tmp.359 = getv ? :comma;
+        %tmp.361 = lgetv %i.7;
+        %tmp.362 = agetv %tmp.359 %tmp.361;
+        %tmp.363 = null;
+        %tmp.364 = ne %tmp.362 %tmp.363;
+        bf %tmp.364 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_46_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 101 10 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_46_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_46_stop" ]
+        %tempbyte.8 = local;
+        %tmp.366 = 1;
+        %tmp.365 = newba %tmp.366;
+        lputv %tempbyte.8 %tmp.365;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 102 10 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_46_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_46_stop" ]
+        %tempbytetoo.9 = local;
+        %tmp.368 = 1;
+        %tmp.367 = newba %tmp.368;
+        lputv %tempbytetoo.9 %tmp.367;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 104 10 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_104_10_if_stmt:
+        %tmp.370 = getv ? :comma;
+        %tmp.372 = lgetv %i.7;
+        %tmp.373 = agetv %tmp.370 %tmp.372;
+        %tmp.374 = getv function %tmp.373 :toNumber;
+        %tmp.375 = invoke %tmp.373 %tmp.374();
+        %tmp.376 = 255;
+        %tmp.377 = gt %tmp.375 %tmp.376;
+        bf %tmp.377 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_104_10_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_104_10_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_104_40_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 104 42 ]
+        %tmp.378 = getv self :comma;
+        %tmp.380 = getv ? :comma;
+        %tmp.382 = lgetv %i.7;
+        %tmp.383 = agetv %tmp.380 %tmp.382;
+        %tmp.384 = getv function %tmp.383 :toNumber;
+        %tmp.385 = invoke %tmp.383 %tmp.384();
+        %tmp.386 = 100;
+        %tmp.387 = mod %tmp.385 %tmp.386;
+        %tmp.389 = lgetv %i.7;
+        %tmp.390 = 1;
+        %tmp.391 = add %tmp.389 %tmp.390;
+        aputv %tmp.378 %tmp.391 %tmp.387;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 104 82 ]
+        %tmp.392 = getv self :comma;
+        %tmp.394 = getv ? :comma;
+        %tmp.396 = lgetv %i.7;
+        %tmp.397 = agetv %tmp.394 %tmp.396;
+        %tmp.398 = getv function %tmp.397 :toNumber;
+        %tmp.399 = invoke %tmp.397 %tmp.398();
+        %tmp.400 = 100;
+        %tmp.401 = div %tmp.399 %tmp.400;
+        %tmp.403 = lgetv %i.7;
+        aputv %tmp.392 %tmp.403 %tmp.401;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_104_40_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_104_10_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_104_10_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 105 10 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_105_10_if_stmt:
+        %tmp.405 = getv ? :commatoo;
+        %tmp.407 = lgetv %i.7;
+        %tmp.408 = agetv %tmp.405 %tmp.407;
+        %tmp.409 = getv function %tmp.408 :toNumber;
+        %tmp.410 = invoke %tmp.408 %tmp.409();
+        %tmp.411 = 255;
+        %tmp.412 = gt %tmp.410 %tmp.411;
+        bf %tmp.412 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_105_10_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_105_10_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_105_43_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 105 45 ]
+        %tmp.413 = getv self :commatoo;
+        %tmp.415 = getv ? :commatoo;
+        %tmp.417 = lgetv %i.7;
+        %tmp.418 = agetv %tmp.415 %tmp.417;
+        %tmp.419 = getv function %tmp.418 :toNumber;
+        %tmp.420 = invoke %tmp.418 %tmp.419();
+        %tmp.421 = 100;
+        %tmp.422 = mod %tmp.420 %tmp.421;
+        %tmp.424 = lgetv %i.7;
+        %tmp.425 = 1;
+        %tmp.426 = add %tmp.424 %tmp.425;
+        aputv %tmp.413 %tmp.426 %tmp.422;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 105 91 ]
+        %tmp.427 = getv self :commatoo;
+        %tmp.429 = getv ? :commatoo;
+        %tmp.431 = lgetv %i.7;
+        %tmp.432 = agetv %tmp.429 %tmp.431;
+        %tmp.433 = getv function %tmp.432 :toNumber;
+        %tmp.434 = invoke %tmp.432 %tmp.433();
+        %tmp.435 = 100;
+        %tmp.436 = div %tmp.434 %tmp.435;
+        %tmp.438 = lgetv %i.7;
+        aputv %tmp.427 %tmp.438 %tmp.436;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_105_43_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_105_10_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_105_10_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 107 10 ]
+        %tmp.439 = lgetv %tempbyte.8;
+        %tmp.440 = getv function %tmp.439 :encodeNumber;
+        %tmp.442 = getv ? :comma;
+        %tmp.444 = lgetv %i.7;
+        %tmp.445 = agetv %tmp.442 %tmp.444;
+        %tmp.446 = getv function %tmp.445 :toNumber;
+        %tmp.447 = invoke %tmp.445 %tmp.446();
+        %tmp.448 = getm $.Toybox.Lang;
+        %tmp.449 = getv %tmp.448 :NUMBER_FORMAT_UINT8;
+        %tmp.450 = newd 1;
+        %tmp.452 = const :endianness;
+        %tmp.453 = getm $.Toybox.Lang;
+        %tmp.454 = getv %tmp.453 :ENDIAN_LITTLE;
+        %tmp.455 = dup %tmp.450;
+        %tmp.456 = aputv %tmp.455 %tmp.452 %tmp.454;
+        invoke %tmp.439 %tmp.440(%tmp.447, %tmp.449, %tmp.456);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 108 10 ]
+        %tmp.457 = lgetv %tempbytetoo.9;
+        %tmp.458 = getv function %tmp.457 :encodeNumber;
+        %tmp.460 = getv ? :commatoo;
+        %tmp.462 = lgetv %i.7;
+        %tmp.463 = agetv %tmp.460 %tmp.462;
+        %tmp.464 = getv function %tmp.463 :toNumber;
+        %tmp.465 = invoke %tmp.463 %tmp.464();
+        %tmp.466 = getm $.Toybox.Lang;
+        %tmp.467 = getv %tmp.466 :NUMBER_FORMAT_UINT8;
+        %tmp.468 = newd 1;
+        %tmp.470 = const :endianness;
+        %tmp.471 = getm $.Toybox.Lang;
+        %tmp.472 = getv %tmp.471 :ENDIAN_LITTLE;
+        %tmp.473 = dup %tmp.468;
+        %tmp.474 = aputv %tmp.473 %tmp.470 %tmp.472;
+        invoke %tmp.457 %tmp.458(%tmp.465, %tmp.467, %tmp.474);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 109 10 ]
+        %tmp.476 = getv ? :LatstackB;
+        %tmp.477 = getv function %tmp.476 :addAll;
+        %tmp.479 = lgetv %tempbyte.8;
+        invoke %tmp.476 %tmp.477(%tmp.479);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 110 10 ]
+        %tmp.481 = getv ? :LonstackB;
+        %tmp.482 = getv function %tmp.481 :addAll;
+        %tmp.484 = lgetv %tempbytetoo.9;
+        invoke %tmp.481 %tmp.482(%tmp.484);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_46_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_incr:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 100 ]
+        %tmp.487 = lgetv %i.7;
+        %tmp.488 = add %tmp.487 1;
+        lputv %i.7 %tmp.488;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_test;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_100_8_for_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 112 6 ]
+        %tmp.490 = getv ? :_bcs_profile;
+        %tmp.491 = getv function %tmp.490 :addmessage;
+        %tmp.493 = getv ? :LatstackB;
+        invoke %tmp.490 %tmp.491(%tmp.493);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 113 6 ]
+        %tmp.495 = getv ? :_bcs_profile;
+        %tmp.496 = getv function %tmp.495 :addmessage;
+        %tmp.498 = getv ? :LonstackB;
+        invoke %tmp.495 %tmp.496(%tmp.498);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_89_150_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_88_6_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 115 6 ]
+        %tmp.500 = getv ? :location;
+        %tmp.501 = 0;
+        %tmp.502 = agetv %tmp.500 %tmp.501;
+        %tmp.503 = getv function %tmp.502 :format;
+        %tmp.504 = "%.4f";
+        %tmp.505 = invoke %tmp.502 %tmp.503(%tmp.504);
+        %tmp.506 = " ";
+        %tmp.507 = add %tmp.505 %tmp.506;
+        %tmp.509 = getv ? :location;
+        %tmp.510 = 1;
+        %tmp.511 = agetv %tmp.509 %tmp.510;
+        %tmp.512 = getv function %tmp.511 :format;
+        %tmp.513 = "%.4f";
+        %tmp.514 = invoke %tmp.511 %tmp.512(%tmp.513);
+        %tmp.515 = add %tmp.507 %tmp.514;
+        putv self :displaytext %tmp.515;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_116_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_84_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 118 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_4_if_stmt:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_8_begin:
+        %tmp.517 = lgetv %info;
+        %tmp.519 = const :currentPower;
+        %tmp.520 = canhazplz %tmp.517 %tmp.519;
+        %tmp.521 = dup %tmp.520;
+        bf %tmp.521 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_34_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_34_true:
+        %tmp.523 = getv ? :turn;
+        %tmp.524 = 3;
+        %tmp.525 = eq %tmp.523 %tmp.524;
+        %tmp.526 = and %tmp.520 %tmp.525;
+        push %tmp.526;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_34_end:
+        %tmp.527 = phi [%tmp.521 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_8_begin] [%tmp.526 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_34_true] [%tmp.527 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_34_end];
+        %tmp.528 = dup %tmp.527;
+        bf %tmp.528 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_47_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_47_true:
+        %tmp.530 = getv ? :power;
+        %tmp.531 = null;
+        %tmp.532 = ne %tmp.530 %tmp.531;
+        %tmp.533 = and %tmp.527 %tmp.532;
+        push %tmp.533;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_47_end:
+        %tmp.534 = phi [%tmp.528 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_8_begin] [%tmp.533 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_47_true] [%tmp.534 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_47_end];
+        %tmp.535 = dup %tmp.534;
+        bf %tmp.535 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_64_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_64_true:
+        %tmp.537 = getv ? :power;
+        %tmp.538 = as %tmp.537 { (!Null) };
+        %tmp.540 = getv ? :powerprev;
+        %tmp.541 = ne %tmp.538 %tmp.540;
+        %tmp.542 = and %tmp.534 %tmp.541;
+        push %tmp.542;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_64_end:
+        %tmp.543 = phi [%tmp.535 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_8_begin] [%tmp.542 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_64_true] [%tmp.543 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_64_end];
+        bf %tmp.543 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_84_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 119 6 ]
+        %tmp.544 = lgetv %info;
+        %tmp.545 = as %tmp.544 { (interface { var currentPower; }) };
+        %tmp.546 = getv %tmp.545 :currentPower;
+        putv self :power %tmp.546;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 120 6 ]
+        %tmp.548 = getv ? :power;
+        putv self :powerprev %tmp.548;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 122 6 ]
+        while @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_122_6_while_test @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_122_6_while_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_122_6_while_test:
+        %tmp.550 = getv ? :power;
+        %tmp.551 = 255;
+        %tmp.552 = gt %tmp.550 %tmp.551;
+        bf %tmp.552 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_122_6_while_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_122_6_while_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_122_25_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 123 8 ]
+        %tmp.554 = getv ? :power;
+        %tmp.555 = 255;
+        %tmp.556 = sub %tmp.554 %tmp.555;
+        putv self :power %tmp.556;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 124 8 ]
+        %tmp.558 = getv ? :powerhex;
+        %tmp.559 = 0x0A;
+        %tmp.560 = add %tmp.558 %tmp.559;
+        putv self :powerhex %tmp.560;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_122_25_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_122_6_while_test;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_122_6_while_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 126 6 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_84_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_84_stop" ]
+        %PowerstackB.10 = local;
+        %tmp.561 = newba 1;
+        %tmp.563 = getv ? :powerhex;
+        %tmp.564 = dup %tmp.561;
+        %tmp.565 = aputv %tmp.564 0 %tmp.563;
+        lputv %PowerstackB.10 %tmp.565;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 127 6 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_84_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_84_stop" ]
+        %tempbyte.11 = local;
+        %tmp.567 = 1;
+        %tmp.566 = newba %tmp.567;
+        lputv %tempbyte.11 %tmp.566;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 128 6 ]
+        %tmp.568 = lgetv %tempbyte.11;
+        %tmp.569 = getv function %tmp.568 :encodeNumber;
+        %tmp.571 = getv ? :power;
+        %tmp.572 = getm $.Toybox.Lang;
+        %tmp.573 = getv %tmp.572 :NUMBER_FORMAT_UINT8;
+        %tmp.574 = newd 1;
+        %tmp.576 = const :endianness;
+        %tmp.577 = getm $.Toybox.Lang;
+        %tmp.578 = getv %tmp.577 :ENDIAN_LITTLE;
+        %tmp.579 = dup %tmp.574;
+        %tmp.580 = aputv %tmp.579 %tmp.576 %tmp.578;
+        invoke %tmp.568 %tmp.569(%tmp.571, %tmp.573, %tmp.580);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 129 6 ]
+        %tmp.582 = getv ? :AltstackB;
+        %tmp.583 = getv function %tmp.582 :addAll;
+        %tmp.585 = lgetv %tempbyte.11;
+        invoke %tmp.582 %tmp.583(%tmp.585);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 130 6 ]
+        %tmp.587 = getv ? :_bcs_profile;
+        %tmp.588 = getv function %tmp.587 :addmessage;
+        %tmp.590 = lgetv %PowerstackB.10;
+        invoke %tmp.587 %tmp.588(%tmp.590);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_84_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_118_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 133 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_4_if_stmt:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_8_begin:
+        %tmp.592 = lgetv %info;
+        %tmp.594 = const :currentSpeed;
+        %tmp.595 = canhazplz %tmp.592 %tmp.594;
+        %tmp.596 = dup %tmp.595;
+        bf %tmp.596 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_34_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_34_true:
+        %tmp.598 = getv ? :turn;
+        %tmp.599 = 4;
+        %tmp.600 = eq %tmp.598 %tmp.599;
+        %tmp.601 = and %tmp.595 %tmp.600;
+        push %tmp.601;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_34_end:
+        %tmp.602 = phi [%tmp.596 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_8_begin] [%tmp.601 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_34_true] [%tmp.602 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_34_end];
+        %tmp.603 = dup %tmp.602;
+        bf %tmp.603 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_47_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_47_true:
+        %tmp.604 = lgetv %info;
+        %tmp.605 = as %tmp.604 { (interface { var currentSpeed; }) };
+        %tmp.606 = getv %tmp.605 :currentSpeed;
+        %tmp.607 = null;
+        %tmp.608 = ne %tmp.606 %tmp.607;
+        %tmp.609 = and %tmp.602 %tmp.608;
+        push %tmp.609;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_47_end:
+        %tmp.610 = phi [%tmp.603 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_8_begin] [%tmp.609 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_47_true] [%tmp.610 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_47_end];
+        %tmp.611 = dup %tmp.610;
+        bf %tmp.611 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_76_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_76_true:
+        %tmp.612 = lgetv %info;
+        %tmp.613 = as %tmp.612 { (interface { var currentSpeed; }) };
+        %tmp.614 = getv %tmp.613 :currentSpeed;
+        %tmp.615 = 0.0;
+        %tmp.616 = ne %tmp.614 %tmp.615;
+        %tmp.617 = and %tmp.610 %tmp.616;
+        push %tmp.617;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_76_end:
+        %tmp.618 = phi [%tmp.611 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_8_begin] [%tmp.617 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_76_true] [%tmp.618 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_76_end];
+        %tmp.619 = dup %tmp.618;
+        bf %tmp.619 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_104_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_104_true:
+        %tmp.620 = lgetv %info;
+        %tmp.621 = as %tmp.620 { (interface { var currentSpeed; }) };
+        %tmp.622 = getv %tmp.621 :currentSpeed;
+        %tmp.624 = getv ? :speedprev;
+        %tmp.625 = ne %tmp.622 %tmp.624;
+        %tmp.626 = and %tmp.618 %tmp.625;
+        push %tmp.626;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_104_end:
+        %tmp.627 = phi [%tmp.619 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_8_begin] [%tmp.626 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_104_true] [%tmp.627 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_104_end];
+        bf %tmp.627 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_136_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 134 6 ]
+        %tmp.628 = lgetv %info;
+        %tmp.629 = as %tmp.628 { (interface { var currentSpeed; }) };
+        %tmp.630 = getv %tmp.629 :currentSpeed;
+        putv self :speedprev %tmp.630;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 136 6 ]
+        %tmp.632 = getv ? :_bcs_profile;
+        %tmp.633 = getv function %tmp.632 :toArray;
+        %tmp.634 = lgetv %info;
+        %tmp.635 = as %tmp.634 { (interface { var currentSpeed; }) };
+        %tmp.636 = getv %tmp.635 :currentSpeed;
+        %tmp.638 = getv ? :tokmh;
+        %tmp.639 = mul %tmp.636 %tmp.638;
+        %tmp.640 = getv function %tmp.639 :format;
+        %tmp.641 = "%.2f";
+        %tmp.642 = invoke %tmp.639 %tmp.640(%tmp.641);
+        %tmp.643 = ".";
+        %tmp.644 = invoke %tmp.632 %tmp.633(%tmp.642, %tmp.643);
+        putv self :comma %tmp.644;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 137 6 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_136_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_136_stop" ]
+        %SpeedstackB.12 = local;
+        %tmp.645 = newba 1;
+        %tmp.646 = 0x04;
+        %tmp.647 = dup %tmp.645;
+        %tmp.648 = aputv %tmp.647 0 %tmp.646;
+        lputv %SpeedstackB.12 %tmp.648;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 138 6 ]
+        for @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_test @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_incr @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_init:
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_begin" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_end" ]
+        %i.13 = local;
+        %tmp.649 = 0;
+        lputv %i.13 %tmp.649;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_test:
+        %tmp.651 = getv ? :comma;
+        %tmp.653 = lgetv %i.13;
+        %tmp.654 = agetv %tmp.651 %tmp.653;
+        %tmp.655 = null;
+        %tmp.656 = ne %tmp.654 %tmp.655;
+        bf %tmp.656 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_44_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 139 8 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_44_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_44_stop" ]
+        %tempbyte.14 = local;
+        %tmp.658 = 1;
+        %tmp.657 = newba %tmp.658;
+        lputv %tempbyte.14 %tmp.657;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 140 8 ]
+        %tmp.659 = lgetv %tempbyte.14;
+        %tmp.660 = getv function %tmp.659 :encodeNumber;
+        %tmp.662 = getv ? :comma;
+        %tmp.664 = lgetv %i.13;
+        %tmp.665 = agetv %tmp.662 %tmp.664;
+        %tmp.666 = getv function %tmp.665 :toNumber;
+        %tmp.667 = invoke %tmp.665 %tmp.666();
+        %tmp.668 = getm $.Toybox.Lang;
+        %tmp.669 = getv %tmp.668 :NUMBER_FORMAT_UINT8;
+        %tmp.670 = newd 1;
+        %tmp.672 = const :endianness;
+        %tmp.673 = getm $.Toybox.Lang;
+        %tmp.674 = getv %tmp.673 :ENDIAN_LITTLE;
+        %tmp.675 = dup %tmp.670;
+        %tmp.676 = aputv %tmp.675 %tmp.672 %tmp.674;
+        invoke %tmp.659 %tmp.660(%tmp.667, %tmp.669, %tmp.676);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 141 8 ]
+        %tmp.677 = lgetv %SpeedstackB.12;
+        %tmp.678 = getv function %tmp.677 :addAll;
+        %tmp.680 = lgetv %tempbyte.14;
+        invoke %tmp.677 %tmp.678(%tmp.680);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_44_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_incr:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 138 ]
+        %tmp.683 = lgetv %i.13;
+        %tmp.684 = add %tmp.683 1;
+        lputv %i.13 %tmp.684;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_test;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_138_6_for_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 143 6 ]
+        %tmp.686 = getv ? :_bcs_profile;
+        %tmp.687 = getv function %tmp.686 :addmessage;
+        %tmp.689 = lgetv %SpeedstackB.12;
+        invoke %tmp.686 %tmp.687(%tmp.689);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_136_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_133_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 146 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_4_if_stmt:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_8_begin:
+        %tmp.691 = lgetv %info;
+        %tmp.693 = const :elapsedDistance;
+        %tmp.694 = canhazplz %tmp.691 %tmp.693;
+        %tmp.695 = dup %tmp.694;
+        bf %tmp.695 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_37_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_37_true:
+        %tmp.697 = getv ? :turn;
+        %tmp.698 = 5;
+        %tmp.699 = eq %tmp.697 %tmp.698;
+        %tmp.700 = and %tmp.694 %tmp.699;
+        push %tmp.700;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_37_end:
+        %tmp.701 = phi [%tmp.695 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_8_begin] [%tmp.700 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_37_true] [%tmp.701 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_37_end];
+        %tmp.702 = dup %tmp.701;
+        bf %tmp.702 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_50_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_50_true:
+        %tmp.703 = lgetv %info;
+        %tmp.704 = as %tmp.703 { (interface { var elapsedDistance; }) };
+        %tmp.705 = getv %tmp.704 :elapsedDistance;
+        %tmp.706 = null;
+        %tmp.707 = ne %tmp.705 %tmp.706;
+        %tmp.708 = and %tmp.701 %tmp.707;
+        push %tmp.708;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_50_end:
+        %tmp.709 = phi [%tmp.702 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_8_begin] [%tmp.708 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_50_true] [%tmp.709 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_50_end];
+        %tmp.710 = dup %tmp.709;
+        bf %tmp.710 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_82_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_82_true:
+        %tmp.711 = lgetv %info;
+        %tmp.712 = as %tmp.711 { (interface { var elapsedDistance; }) };
+        %tmp.713 = getv %tmp.712 :elapsedDistance;
+        %tmp.715 = getv ? :distanceprev;
+        %tmp.716 = ne %tmp.713 %tmp.715;
+        %tmp.717 = and %tmp.709 %tmp.716;
+        push %tmp.717;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_82_end:
+        %tmp.718 = phi [%tmp.710 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_8_begin] [%tmp.717 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_82_true] [%tmp.718 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_82_end];
+        bf %tmp.718 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_120_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 147 6 ]
+        %tmp.719 = lgetv %info;
+        %tmp.720 = as %tmp.719 { (interface { var elapsedDistance; }) };
+        %tmp.721 = getv %tmp.720 :elapsedDistance;
+        putv self :distanceprev %tmp.721;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 149 6 ]
+        %tmp.723 = getv ? :_bcs_profile;
+        %tmp.724 = getv function %tmp.723 :toArray;
+        %tmp.725 = lgetv %info;
+        %tmp.726 = as %tmp.725 { (interface { var elapsedDistance; }) };
+        %tmp.727 = getv %tmp.726 :elapsedDistance;
+        %tmp.728 = 1000;
+        %tmp.729 = div %tmp.727 %tmp.728;
+        %tmp.730 = getv function %tmp.729 :format;
+        %tmp.731 = "%.2f";
+        %tmp.732 = invoke %tmp.729 %tmp.730(%tmp.731);
+        %tmp.733 = ".";
+        %tmp.734 = invoke %tmp.723 %tmp.724(%tmp.732, %tmp.733);
+        putv self :comma %tmp.734;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 150 6 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_150_6_if_stmt:
+        %tmp.736 = getv ? :comma;
+        %tmp.737 = 0;
+        %tmp.738 = agetv %tmp.736 %tmp.737;
+        %tmp.739 = getv function %tmp.738 :toNumber;
+        %tmp.740 = invoke %tmp.738 %tmp.739();
+        %tmp.741 = 255;
+        %tmp.742 = gt %tmp.740 %tmp.741;
+        bf %tmp.742 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_150_6_if_false;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_150_6_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_150_36_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 150 38 ]
+        %tmp.743 = getv self :comma;
+        %tmp.745 = getv ? :comma;
+        %tmp.746 = 0;
+        %tmp.747 = agetv %tmp.745 %tmp.746;
+        %tmp.748 = getv function %tmp.747 :toNumber;
+        %tmp.749 = invoke %tmp.747 %tmp.748();
+        %tmp.750 = 255;
+        %tmp.751 = sub %tmp.749 %tmp.750;
+        %tmp.752 = 0;
+        aputv %tmp.743 %tmp.752 %tmp.751;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 150 76 ]
+        %tmp.753 = newba 1;
+        %tmp.754 = 0x0F;
+        %tmp.755 = dup %tmp.753;
+        %tmp.756 = aputv %tmp.755 0 %tmp.754;
+        putv self :DiststackB %tmp.756;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_150_36_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_150_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_150_6_if_false:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_151_10_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 151 12 ]
+        %tmp.757 = newba 1;
+        %tmp.758 = 0x05;
+        %tmp.759 = dup %tmp.757;
+        %tmp.760 = aputv %tmp.759 0 %tmp.758;
+        putv self :DiststackB %tmp.760;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_151_10_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_150_6_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 153 6 ]
+        for @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_test @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_incr @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_init:
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_begin" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_end" ]
+        %i.15 = local;
+        %tmp.761 = 0;
+        lputv %i.15 %tmp.761;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_test:
+        %tmp.763 = getv ? :comma;
+        %tmp.765 = lgetv %i.15;
+        %tmp.766 = agetv %tmp.763 %tmp.765;
+        %tmp.767 = null;
+        %tmp.768 = ne %tmp.766 %tmp.767;
+        bf %tmp.768 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_44_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 154 8 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_44_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_44_stop" ]
+        %tempbyte.16 = local;
+        %tmp.770 = 1;
+        %tmp.769 = newba %tmp.770;
+        lputv %tempbyte.16 %tmp.769;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 155 8 ]
+        %tmp.771 = lgetv %tempbyte.16;
+        %tmp.772 = getv function %tmp.771 :encodeNumber;
+        %tmp.774 = getv ? :comma;
+        %tmp.776 = lgetv %i.15;
+        %tmp.777 = agetv %tmp.774 %tmp.776;
+        %tmp.778 = getv function %tmp.777 :toNumber;
+        %tmp.779 = invoke %tmp.777 %tmp.778();
+        %tmp.780 = getm $.Toybox.Lang;
+        %tmp.781 = getv %tmp.780 :NUMBER_FORMAT_UINT8;
+        %tmp.782 = newd 1;
+        %tmp.784 = const :endianness;
+        %tmp.785 = getm $.Toybox.Lang;
+        %tmp.786 = getv %tmp.785 :ENDIAN_LITTLE;
+        %tmp.787 = dup %tmp.782;
+        %tmp.788 = aputv %tmp.787 %tmp.784 %tmp.786;
+        invoke %tmp.771 %tmp.772(%tmp.779, %tmp.781, %tmp.788);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 156 8 ]
+        %tmp.790 = getv ? :DiststackB;
+        %tmp.791 = getv function %tmp.790 :addAll;
+        %tmp.793 = lgetv %tempbyte.16;
+        invoke %tmp.790 %tmp.791(%tmp.793);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_44_stop:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_incr:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 153 ]
+        %tmp.796 = lgetv %i.15;
+        %tmp.797 = add %tmp.796 1;
+        lputv %i.15 %tmp.797;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_test;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_153_6_for_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 158 6 ]
+        %tmp.799 = getv ? :_bcs_profile;
+        %tmp.800 = getv function %tmp.799 :addmessage;
+        %tmp.802 = getv ? :DiststackB;
+        invoke %tmp.799 %tmp.800(%tmp.802);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_120_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_146_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 161 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_4_if_stmt:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_8_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_8_begin:
+        %tmp.804 = lgetv %info;
+        %tmp.806 = const :altitude;
+        %tmp.807 = canhazplz %tmp.804 %tmp.806;
+        %tmp.808 = dup %tmp.807;
+        bf %tmp.808 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_30_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_30_true:
+        %tmp.810 = getv ? :turn;
+        %tmp.811 = 6;
+        %tmp.812 = eq %tmp.810 %tmp.811;
+        %tmp.813 = and %tmp.807 %tmp.812;
+        push %tmp.813;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_30_end:
+        %tmp.814 = phi [%tmp.808 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_8_begin] [%tmp.813 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_30_true] [%tmp.814 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_30_end];
+        %tmp.815 = dup %tmp.814;
+        bf %tmp.815 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_43_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_43_true:
+        %tmp.816 = lgetv %info;
+        %tmp.817 = as %tmp.816 { (interface { var altitude; }) };
+        %tmp.818 = getv %tmp.817 :altitude;
+        %tmp.819 = null;
+        %tmp.820 = ne %tmp.818 %tmp.819;
+        %tmp.821 = and %tmp.814 %tmp.820;
+        push %tmp.821;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_43_end:
+        %tmp.822 = phi [%tmp.815 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_8_begin] [%tmp.821 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_43_true] [%tmp.822 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_43_end];
+        %tmp.823 = dup %tmp.822;
+        bf %tmp.823 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_68_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_68_true:
+        %tmp.824 = lgetv %info;
+        %tmp.825 = as %tmp.824 { (interface { var altitude; }) };
+        %tmp.826 = getv %tmp.825 :altitude;
+        %tmp.827 = getv function %tmp.826 :toNumber;
+        %tmp.828 = invoke %tmp.826 %tmp.827();
+        %tmp.830 = getv ? :altitudeprev;
+        %tmp.831 = ne %tmp.828 %tmp.830;
+        %tmp.832 = and %tmp.822 %tmp.831;
+        push %tmp.832;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_68_end:
+        %tmp.833 = phi [%tmp.823 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_8_begin] [%tmp.832 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_68_true] [%tmp.833 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_68_end];
+        bf %tmp.833 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_110_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 162 6 ]
+        %tmp.834 = lgetv %info;
+        %tmp.835 = as %tmp.834 { (interface { var altitude; }) };
+        %tmp.836 = getv %tmp.835 :altitude;
+        %tmp.837 = getv function %tmp.836 :toNumber;
+        %tmp.838 = invoke %tmp.836 %tmp.837();
+        putv self :altitudeprev %tmp.838;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 163 6 ]
+        %tmp.839 = lgetv %info;
+        %tmp.840 = as %tmp.839 { (interface { var altitude; }) };
+        %tmp.841 = getv %tmp.840 :altitude;
+        putv self :altitude %tmp.841;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 164 6 ]
+        %tmp.842 = 0x06;
+        putv self :altitudehex %tmp.842;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 165 6 ]
+        while @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_165_6_while_test @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_165_6_while_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_165_6_while_test:
+        %tmp.844 = getv ? :altitude;
+        %tmp.845 = 255;
+        %tmp.846 = gt %tmp.844 %tmp.845;
+        bf %tmp.846 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_165_6_while_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_165_6_while_begin:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_165_28_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 166 8 ]
+        %tmp.848 = getv ? :altitude;
+        %tmp.849 = 255;
+        %tmp.850 = sub %tmp.848 %tmp.849;
+        putv self :altitude %tmp.850;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 167 8 ]
+        %tmp.852 = getv ? :altitudehex;
+        %tmp.853 = 0x0A;
+        %tmp.854 = add %tmp.852 %tmp.853;
+        putv self :altitudehex %tmp.854;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_165_28_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_165_6_while_test;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_165_6_while_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 170 6 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_110_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_110_stop" ]
+        %AltstackB.17 = local;
+        %tmp.855 = newba 1;
+        %tmp.857 = getv ? :altitudehex;
+        %tmp.858 = dup %tmp.855;
+        %tmp.859 = aputv %tmp.858 0 %tmp.857;
+        lputv %AltstackB.17 %tmp.859;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 171 6 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_110_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_110_stop" ]
+        %tempbyte.18 = local;
+        %tmp.861 = 1;
+        %tmp.860 = newba %tmp.861;
+        lputv %tempbyte.18 %tmp.860;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 172 6 ]
+        %tmp.862 = lgetv %tempbyte.18;
+        %tmp.863 = getv function %tmp.862 :encodeNumber;
+        %tmp.865 = getv ? :altitude;
+        %tmp.866 = getm $.Toybox.Lang;
+        %tmp.867 = getv %tmp.866 :NUMBER_FORMAT_UINT8;
+        %tmp.868 = newd 1;
+        %tmp.870 = const :endianness;
+        %tmp.871 = getm $.Toybox.Lang;
+        %tmp.872 = getv %tmp.871 :ENDIAN_LITTLE;
+        %tmp.873 = dup %tmp.868;
+        %tmp.874 = aputv %tmp.873 %tmp.870 %tmp.872;
+        invoke %tmp.862 %tmp.863(%tmp.865, %tmp.867, %tmp.874);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 173 6 ]
+        %tmp.875 = lgetv %AltstackB.17;
+        %tmp.876 = getv function %tmp.875 :addAll;
+        %tmp.878 = lgetv %tempbyte.18;
+        invoke %tmp.875 %tmp.876(%tmp.878);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 174 6 ]
+        %tmp.880 = getv ? :_bcs_profile;
+        %tmp.881 = getv function %tmp.880 :addmessage;
+        %tmp.883 = lgetv %AltstackB.17;
+        invoke %tmp.880 %tmp.881(%tmp.883);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_110_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_161_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 177 4 ]
+        %tmp.885 = getv ? :System;
+        %tmp.886 = getv function %tmp.885 :getSystemStats;
+        %tmp.887 = invoke %tmp.885 %tmp.886();
+        %tmp.888 = getv %tmp.887 :battery;
+        %tmp.889 = getv function %tmp.888 :toNumber;
+        %tmp.890 = invoke %tmp.888 %tmp.889();
+        putv self :batterypercent %tmp.890;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 178 4 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_4_if_stmt:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_8_begin:
+        %tmp.892 = getv ? :turn;
+        %tmp.893 = 7;
+        %tmp.894 = eq %tmp.892 %tmp.893;
+        %tmp.895 = dup %tmp.894;
+        bf %tmp.895 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_21_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_21_true:
+        %tmp.897 = getv ? :batterypercent;
+        %tmp.899 = getv ? :batterypercentprev;
+        %tmp.900 = ne %tmp.897 %tmp.899;
+        %tmp.901 = and %tmp.894 %tmp.900;
+        push %tmp.901;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_21_end:
+        %tmp.902 = phi [%tmp.895 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_8_begin] [%tmp.901 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_21_true] [%tmp.902 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_21_end];
+        bf %tmp.902 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_4_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_59_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 179 6 ]
+        %tmp.904 = getv ? :batterypercent;
+        %tmp.905 = getv function %tmp.904 :toNumber;
+        %tmp.906 = invoke %tmp.904 %tmp.905();
+        putv self :batterypercentprev %tmp.906;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 181 6 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_59_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_59_stop" ]
+        %BattstackB.19 = local;
+        %tmp.907 = newba 1;
+        %tmp.908 = 0x07;
+        %tmp.909 = dup %tmp.907;
+        %tmp.910 = aputv %tmp.909 0 %tmp.908;
+        lputv %BattstackB.19 %tmp.910;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 182 6 ]
+        [ "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_59_start" "C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_59_stop" ]
+        %tempbyte.20 = local;
+        %tmp.912 = 1;
+        %tmp.911 = newba %tmp.912;
+        lputv %tempbyte.20 %tmp.911;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 183 6 ]
+        %tmp.913 = lgetv %tempbyte.20;
+        %tmp.914 = getv function %tmp.913 :encodeNumber;
+        %tmp.916 = getv ? :batterypercent;
+        %tmp.917 = getv function %tmp.916 :toNumber;
+        %tmp.918 = invoke %tmp.916 %tmp.917();
+        %tmp.919 = getm $.Toybox.Lang;
+        %tmp.920 = getv %tmp.919 :NUMBER_FORMAT_UINT8;
+        %tmp.921 = newd 1;
+        %tmp.923 = const :endianness;
+        %tmp.924 = getm $.Toybox.Lang;
+        %tmp.925 = getv %tmp.924 :ENDIAN_LITTLE;
+        %tmp.926 = dup %tmp.921;
+        %tmp.927 = aputv %tmp.926 %tmp.923 %tmp.925;
+        invoke %tmp.913 %tmp.914(%tmp.918, %tmp.920, %tmp.927);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 184 6 ]
+        %tmp.928 = lgetv %BattstackB.19;
+        %tmp.929 = getv function %tmp.928 :addAll;
+        %tmp.931 = lgetv %tempbyte.20;
+        invoke %tmp.928 %tmp.929(%tmp.931);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 186 6 ]
+        %tmp.933 = getv ? :_bcs_profile;
+        %tmp.934 = getv function %tmp.933 :addmessage;
+        %tmp.936 = lgetv %BattstackB.19;
+        invoke %tmp.933 %tmp.934(%tmp.936);
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_59_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_4_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_178_4_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 189 6 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_189_13_begin:
+        %tmp.938 = getv ? :turn;
+        %tmp.939 = 7;
+        %tmp.940 = eq %tmp.938 %tmp.939;
+        bf %tmp.940 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_189_13_false;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_189_13_true:
+        %tmp.941 = 0;
+        push %tmp.941;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_189_13_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_189_13_false:
+        %tmp.943 = getv ? :turn;
+        %tmp.944 = 1;
+        %tmp.945 = add %tmp.943 %tmp.944;
+        push %tmp.945;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_189_13_end:
+        %tmp.946 = phi [%tmp.940 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_189_13_begin] [%tmp.941 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_189_13_true] [%tmp.945 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_189_13_false] [%tmp.946 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_189_13_end];
+        putv self :turn %tmp.946;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 191 6 ]
+        %tmp.947 = getv self :_bcs_profile;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_191_36_begin:
+        %tmp.949 = getv ? :_bcs_profile;
+        %tmp.950 = getv %tmp.949 :connectedtimer;
+        %tmp.951 = 0;
+        %tmp.952 = ne %tmp.950 %tmp.951;
+        bf %tmp.952 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_191_36_false;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_191_36_true:
+        %tmp.954 = getv ? :_bcs_profile;
+        %tmp.955 = getv %tmp.954 :connectedtimer;
+        %tmp.956 = 1;
+        %tmp.957 = sub %tmp.955 %tmp.956;
+        push %tmp.957;
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_191_36_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_191_36_false:
+        %tmp.958 = 0;
+        push %tmp.958;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_191_36_end:
+        %tmp.959 = phi [%tmp.952 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_191_36_begin] [%tmp.957 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_191_36_true] [%tmp.958 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_191_36_false] [%tmp.959 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_191_36_end];
+        putv %tmp.947 :connectedtimer %tmp.959;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 194 6 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_194_6_if_stmt:
+        %tmp.961 = lgetv %info;
+        %tmp.963 = const :timerTime;
+        %tmp.964 = canhazplz %tmp.961 %tmp.963;
+        bf %tmp.964 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_194_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_194_6_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_194_31_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 195 8 ]
+        %tmp.966 = getv ? :System;
+        %tmp.967 = getv function %tmp.966 :println;
+        %tmp.968 = "Timer:";
+        %tmp.969 = lgetv %info;
+        %tmp.970 = as %tmp.969 { (interface { var timerTime; }) };
+        %tmp.971 = getv %tmp.970 :timerTime;
+        %tmp.972 = add %tmp.968 %tmp.971;
+        %tmp.973 = " interval: ";
+        %tmp.974 = add %tmp.972 %tmp.973;
+        %tmp.975 = lgetv %info;
+        %tmp.976 = as %tmp.975 { (interface { var timerTime; }) };
+        %tmp.977 = getv %tmp.976 :timerTime;
+        %tmp.979 = getv ? :lasttimer;
+        %tmp.980 = sub %tmp.977 %tmp.979;
+        %tmp.981 = getv function %tmp.980 :toString;
+        %tmp.982 = invoke %tmp.980 %tmp.981();
+        %tmp.983 = add %tmp.974 %tmp.982;
+        invoke %tmp.966 %tmp.967(%tmp.983);
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 196 8 ]
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_196_8_if_stmt:
+        %tmp.985 = getv ? :_bcs_profile;
+        %tmp.986 = getv %tmp.985 :connectedtimer;
+        %tmp.987 = 0;
+        %tmp.988 = eq %tmp.986 %tmp.987;
+        bf %tmp.988 @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_196_8_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_196_8_if_true:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_196_46_start:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 197 10 ]
+        %tmp.990 = getv ? :_bcs_profile;
+        %tmp.991 = getv function %tmp.990 :sendstack;
+        invoke %tmp.990 %tmp.991();
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 198 10 ]
+        %tmp.992 = lgetv %info;
+        %tmp.993 = as %tmp.992 { (interface { var timerTime; }) };
+        %tmp.994 = getv %tmp.993 :timerTime;
+        putv self :lasttimer %tmp.994;
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 199 10 ]
+        %tmp.995 = "sending";
+        ret %tmp.995;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_196_46_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_196_8_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_196_8_if_end:
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_194_31_stop:
+        goto @C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_194_6_if_end;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_194_6_if_end:
+[ "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc" 203 4 ]
+        %tmp.996 = getm $.Toybox.Lang;
+        %tmp.997 = getv function %tmp.996 :format;
+        %tmp.998 = "$1$  $2$";
+        %tmp.999 = newa 2;
+        %tmp.1000 = lgetv %info;
+        %tmp.1001 = getv %tmp.1000 :timerTime;
+        %tmp.1002 = getv function %tmp.1001 :toString;
+        %tmp.1003 = invoke %tmp.1001 %tmp.1002();
+        %tmp.1004 = dup %tmp.999;
+        %tmp.1005 = aputv %tmp.1004 0 %tmp.1003;
+        %tmp.1007 = getv ? :displaytext;
+        %tmp.1008 = dup %tmp.1005;
+        %tmp.1009 = aputv %tmp.1008 1 %tmp.1007;
+        %tmp.1010 = invoke %tmp.996 %tmp.997(%tmp.998, %tmp.1009);
+        ret %tmp.1010;
+C_Users_jarne_Thesis_RTDCycling_Thesis_GarminRTD_source_GarminRTDView_mc_37_45_stop:
+    }
+}
+[ @file = "C:\Users\jarne\Thesis\RTDCycling\Thesis\GarminRTD\source\GarminRTDView.mc"; @line = 1; ]
+<init> {
+}
