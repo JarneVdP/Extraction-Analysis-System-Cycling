@@ -1,2 +1,7 @@
 # Extraction-Analysis-System-Cycling
 Design and Implementation of a Data Extraction and Analysis System for Cycling
+
+
+This thesis explores the integration of real-time cycling data for enhanced performance analysis and monitoring. By using external and internal sensors, the cycling computer captures various data types, including heart rate, location, power, speed, altitude, and distance. The collected data is processed and transmitted to a dashboard in real-time, allowing others to monitor the cyclists' performance metrics instantly. The developed communication can be scaled to accommodate numerous sensors, which could give a deeper understanding and analysis of their capabilities.
+The study investigates the challenges of utilising Bluetooth Low Energy (BLE) technology for data transmission between the cycling computer and a remote gateway device and uses the broadband cellular network to transmit data from the gateway to the server and dashboard. Additionally, the thesis explores the implementation of data preprocessing algorithms to enhance data accuracy and reliability.
+The research findings demonstrate the effectiveness of real-time cycling data in providing valuable insights for performance tracking, safety and engagement. This thesis contributes to the field of sports technology and offers practical implications for cyclists, coaches, and sports scientists seeking to leverage real-time data for informed decision-making and performance enhancement in cycling.
